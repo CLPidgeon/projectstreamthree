@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Ice Hockey Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head_js %}{% endblock head_js %}
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top navbar-custom">
+        <section class="container-fluid">
+            <section class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapsingList" aria-expanded="false">
+                    <span class="icon-bar" ></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </section>
+
+            <section class="collapse navbar-collapse" id="myCollapsingList">
+                <ul class="nav nav-justified">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Issue Tracker<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Bugs</a></li>
+                            <li><a href="#">Features</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Progress</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+        </section>
+    </nav>
+
+    <section class="container-fluid">
+        <hr>
+        <section class="banner">
+            <h1>The Ice Hockey Site</h1>
+            <p>Your home for all things ice hockey!</p>
+        </section>
+
+        <section class="page-content">
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <hr>
+        <footer>
+            <p>Made By Me, Myself & Django with a bit of help from HTML, CSS, Bootstrap and JavaScript</p>
+            <p>
+                <a href="http://www.facebook.com"><img src="#" alt="facebook page" height="50px" width="50px"></a>
+                <a href="http://www.twitter.com"><img src="#" alt="twitter stream" height="50px" width="50px"></a>
+                <a href="http://www.instagram.com"><img src="#" alt="instagram feed" height="50px" width="50px"></a>
+            </p>
+        </footer>
+    </section>
+</body>
+</html>
