@@ -41,6 +41,9 @@ SITE_URL = 'http://127.0.0.1:8000'
 PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'clare@pidge.com'
 
+# Disqus
+DISQUS_WEBSITE_SHORTNAME = 'icehockeysite'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,6 +61,8 @@ INSTALLED_APPS = [
     'magazines',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'blog',
+    'disqus',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +150,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

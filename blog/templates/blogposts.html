@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-default" onclick="location.href='{% url 'new_post' %}'">New Blog</button>
+        </div>
+    </div>
+    {% for post in posts %}
+        <div class="row">
+            <hr>
+            <div class="col-12">
+                <h1>{{ post.title }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>{{ post.content | truncatewords:30 }}</p>
+                <p><button class="btn btn-default" onclick="location.href={{ post.id }}">Read More...</button></p>
+                <p>{{ post.published_date }}| <strong>Views:</strong> {{ post.views }}| <strong>Tag:</strong> {{ post.tag }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
