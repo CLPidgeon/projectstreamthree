@@ -1,0 +1,21 @@
+{% load thread_extras %}
+<section class="details">
+    <section class="col-md-6">
+        <article class="pull-left">
+            <time datetime="{{ post.created_at }}">
+                Post: {{ post.created_at | started_time }}
+            </time>
+        </article>
+    </section>
+    <section class="col-md-6">
+        <article class="pull-right">
+            {% if post.user == user or user.is_staff %}
+                <a href="{% url 'edit_post' thread.id post.id %}"><i class="fa fa-pencil-square-o"></i></a>
+                <a href="{% url 'delete_post' thread.id post.id %}"><i class="fa fa-trash-o"></i></a>
+            {% endif %}
+        </article>
+    </section>
+    <article class="clearfix">
+
+    </article>
+</section>

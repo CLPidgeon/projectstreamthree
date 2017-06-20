@@ -22,6 +22,7 @@ from accounts import views as accounts_views
 from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
 from magazines import views as magazine_views
+from threads import views as forum_views
 
 
 urlpatterns = [
@@ -34,6 +35,16 @@ urlpatterns = [
     # Blog
     url(r'', include('blog.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+
+    # Forum
+    url(r'^forum/$', forum_views.forum),
+    url(r'^threads/(?P<subject_id>\d+)/$', forum_views.threads, name='threads'),
+    url(r'^new_thread/(?P<subject_id>\d+)/$', forum_views.new_thread, name='new_thread'),
+    url(r'^thread/(?P<thread_id>\d+)/$', forum_views.thread, name='thread'),
+    url(r'^post/new/(?P<thread_id>\d+)/$', forum_views.new_post, name='new_post'),
+    url(r'^post/edit/(?P<thread_id>\d+)/(?P<post_id>\d+)/$', forum_views.edit_post, name='edit_post'),
+    url(r'^post/delete/(?P<thread_id>\d+)/(?P<post_id>\d+)/$', forum_views.delete_post, name='delete_post'),
+    url(r'^thread/vote/(?P<thread_id>\d+)/(?P<subject_id>\d+)/$', forum_views.thread_vote, name='cast_vote'),
 
     # Accounts
     url(r'^register/$', accounts_views.register, name='register'),
@@ -51,3 +62,14 @@ urlpatterns = [
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
     url(r'^magazines/$', magazine_views.all_magazines),
 ]
+
+
+from django.conf import settings
+from django.conf.urls import include, url
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
