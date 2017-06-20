@@ -27,7 +27,7 @@
             <section class="collapse navbar-collapse" id="myCollapsingList">
                 <ul class="nav nav-justified">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="/pages/about/">About</a></li>
                     <li><a href="#">Forum</a></li>
                     <li><a href="#">Blog</a></li>
                     <li class="dropdown">
@@ -41,7 +41,7 @@
                     </li>
                     <li><a href="#">Progress</a></li>
                     <li><a href="/magazines/">Subscribe</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/pages/contact/">Contact</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>

@@ -25,6 +25,9 @@ SECRET_KEY = 'it4nl$4bj*!8%5a+fb=-3mb#*qoaepqd7#ungipoc=@zrp$qqk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+SITE_ID = 2
+
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -53,6 +56,8 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'paypal_store',
     'magazines',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'prj_three.urls'
