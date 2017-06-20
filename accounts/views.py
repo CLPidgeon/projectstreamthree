@@ -6,6 +6,10 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.template.context_processors import csrf
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from models import User
+import json
 import datetime
 import stripe
 import arrow
@@ -14,7 +18,6 @@ import arrow
 #create your views here
 stripe.api_key = settings.STRIPE_SECRET
 
-stripe.api_key = settings.STRIPE_SECRET
 
 def register(request):
     if request.method == 'POST':
@@ -63,6 +66,28 @@ def cancel_subscription(request):
     except Exception, e:
         messages.error(request, e)
     return redirect('profile')
+
+
+@csrf_exempt
+def subscriptions_webhook(request):
+    event_json = json.loads(request.body)
+
+    try:
+
+        # event commented out until project is hosted
+        # event = stripe.Event.retrieve(event_json['object']['id'])
+        cust = event_json['object']['customer']
+        paid = event_json['object']['paid']
+        user = User.objects.get(stripe_id=cust)
+
+        if user and paid:
+            user.subscription_end = arrow.now().replace(weeks=+4).datetime  # add 4 weeks from now
+            user.save()
+
+    except stripe.InvalidRequestError, e:
+        return HttpResponse(status=404)
+
+    return HttpResponse(status=200)
 
 
 @login_required(login_url='/login/')
