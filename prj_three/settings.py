@@ -29,8 +29,14 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.User'
 
+# Stripe environment variables
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_jdJD1T7I9smh6Qem2d7eJIXP')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_vfYulusugV6nOunj56tb5ELk')
+
+# Paypal environment variables
+SITE_URL = 'http://127.0.0.1:8000'
+PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_RECEIVER_EMAIL = 'clare@pidge.com'
 
 # Application definition
 
@@ -44,6 +50,9 @@ INSTALLED_APPS = [
     'home',
     'accounts',
     'django_forms_bootstrap',
+    'paypal.standard.ipn',
+    'paypal_store',
+    'magazines',
 ]
 
 MIDDLEWARE = [
