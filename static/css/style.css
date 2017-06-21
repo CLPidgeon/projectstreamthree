@@ -1,0 +1,51 @@
+body {
+    font-family: "Calibri";
+}
+
+.container-fluid {
+    position: relative;
+    display: block;
+    margin: auto;
+    background-color: aliceblue;
+    text-align: center;
+    color: navy;
+}
+
+.banner {
+    padding: 20px;
+    background-color: aliceblue;
+    width: 100%;
+}
+
+.navbar-custom ul li a{
+    font-size: 18px;
+    color: navy;
+}
+.navbar-custom ul li a:hover{
+    background-color: navy;
+    color: aliceblue;
+}
+
+h1 a {
+    color: navy;
+}
+
+h2 a {
+    color: navy;
+}
+
+h2 a:hover{
+    color: navy;
+}
+
+h1 a:hover {
+    color: navy;
+}
+
+.table {
+    text-align: left;
+}
+
+.icon-bar {
+    background-color: navy;
+}
