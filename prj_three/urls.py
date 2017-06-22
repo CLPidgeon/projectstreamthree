@@ -61,6 +61,9 @@ urlpatterns = [
     url(r'^paypal-return', paypal_views.paypal_return),
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
     url(r'^magazines/$', magazine_views.all_magazines),
+
+    # Issue Tracker
+    url(r'^bugs/', include('bugs.urls')),
 ]
 
 
