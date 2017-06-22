@@ -69,7 +69,8 @@ INSTALLED_APPS = [
     'tinymce',
     'emoticons',
     'rest_framework',
-    'bugs'
+    'bugs',
+    'features',
 ]
 
 INTERNAL_IPS = ('127.0.0.1',)

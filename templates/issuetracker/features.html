@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="container">
+        <div class="col-12">
+            <h1>Feature Suggestions</h1>
+            <p>To create a ticket you must pay a small fee.</p>
+            <p><button class="btn btn-primary" onclick="location.href='{% url 'new_feature' %}'">Request a feature!</button></p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><strong>Title</strong></th>
+                    <th><strong>Description</strong></th>
+                    <th><strong>Status</strong></th>
+                    <th><strong>Updated</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feature in features %}
+                <tr>
+                    <td>{{ feature.title }}</td>
+                    <td>{{ feature.description }}</td>
+                    <td>{{ feature.status }}</td>
+                    <td>{{ feature.updated }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

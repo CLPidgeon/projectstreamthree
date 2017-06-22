@@ -64,6 +64,7 @@ urlpatterns = [
 
     # Issue Tracker
     url(r'^bugs/', include('bugs.urls')),
+    url(r'^features/', include('features.urls')),
 ]
 
 

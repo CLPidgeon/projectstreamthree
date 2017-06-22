@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load bootstrap_tags %}
-    <h1>Report A Bug!</h1>
+    <h1>Request A Feature!</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn btn-info">Submit</button>
     </form>
 {% endblock %}
-
