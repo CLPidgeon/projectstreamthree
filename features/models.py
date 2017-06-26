@@ -17,7 +17,7 @@ class Feature(models.Model):
 
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=255, null=False)
-    status = models.CharField(max_length=5, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=5, choices=STATUS_CHOICES, default='Todo')
     updated = models.DateTimeField(default=timezone.now)
 
     def __unicode__(self):

@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from django.template.context_processors import csrf
+from django.contrib.auth.decorators import login_required
 from bugs.serializers import BugSerializer
 from bugs.models import Bug
 from forms import BugForm
@@ -67,6 +69,7 @@ class BugView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@login_required(login_url='/login/')
 def new_bug(request):
 
     if request.method == 'POST':
@@ -79,11 +82,16 @@ def new_bug(request):
     else:
         form = BugForm()
 
-    return render(request, 'issuetracker/bugform.html', {'form': form})
+    return render(request, 'issuetracker/bugs/bugform.html', {'form': form})
 
 
 def bug_tracker(request):
 
     bugs = Bug.objects.all()
 
-    return render(request, 'issuetracker/bugs.html', {"bugs": bugs})
+    return render(request, 'issuetracker/bugs/bugs.html', {"bugs": bugs})
+
+
+def bug(request):
+
+    return render(request, 'issuetracker/bugs/bug.html')

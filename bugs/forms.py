@@ -7,4 +7,4 @@ class BugForm(forms.ModelForm):
     class Meta:
 
         model = Bug
-        fields = ('title', 'description', 'status')
+        fields = ('title', 'description')

@@ -11,18 +11,14 @@
                 <tr>
                     <th><strong>Title</strong></th>
                     <th><strong>Description</strong></th>
+                    <th><strong>Votes</strong></th>
                     <th><strong>Status</strong></th>
                     <th><strong>Updated</strong></th>
                 </tr>
             </thead>
             <tbody>
                 {% for bug in bugs %}
-                <tr>
-                    <td>{{ bug.title }}</td>
-                    <td>{{ bug.description }}</td>
-                    <td>{{ bug.status }}</td>
-                    <td>{{ bug.updated }}</td>
-                </tr>
+                    {% include 'issuetracker/bugs/bug_item.html' %}
                 {% endfor %}
             </tbody>
         </table>

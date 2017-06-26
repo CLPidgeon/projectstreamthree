@@ -63,8 +63,8 @@ urlpatterns = [
     url(r'^magazines/$', magazine_views.all_magazines),
 
     # Issue Tracker
-    url(r'^bugs/', include('bugs.urls')),
-    url(r'^features/', include('features.urls')),
+    url(r'bugs/', include('bugs.urls')),
+    url(r'features/', include('features.urls')),
 ]
 
 

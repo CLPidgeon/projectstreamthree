@@ -6,9 +6,10 @@ import views
 urlpatterns = [
 
     url(r'^$', FeatureView.as_view()),
-    url(r'(?P<pk>[0-9]+)/$/', FeatureView.as_view()),
+    url(r'(?P<pk>[0-9]+)/$', FeatureView.as_view()),
 
-    #bugs
+    # Features
     url(r'tracker', views.feature_tracker, name='feature_tracker'),
     url(r'new', views.new_feature, name='new_feature'),
+    url(r'comment', views.feature, name='feature'),
 ]

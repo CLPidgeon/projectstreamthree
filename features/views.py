@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from django.contrib.auth.decorators import login_required
 from features.serializers import FeatureSerializer
 from features.models import Feature
 from forms import FeatureForm
@@ -72,9 +73,10 @@ def feature_tracker(request):
 
     features = Feature.objects.all()
 
-    return render(request, 'issuetracker/features.html', {"features": features})
+    return render(request, 'issuetracker/features/features.html', {"features": features})
 
 
+@login_required(login_url='/login/')
 def new_feature(request):
 
     if request.method == 'POST':
@@ -87,4 +89,10 @@ def new_feature(request):
     else:
         form = FeatureForm()
 
-    return render(request, 'issuetracker/featureform.html', {'form': form})
+    return render(request, 'issuetracker/features/featureform.html', {'form': form})
+
+
+def feature(request):
+
+    return render(request, 'issuetracker/features/feature.html')
+
