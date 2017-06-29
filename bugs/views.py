@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -92,6 +93,8 @@ def bug_tracker(request):
     return render(request, 'issuetracker/bugs/bugs.html', {"bugs": bugs})
 
 
-def bug(request):
+def bug_vote(request, bug_id):
 
-    return render(request, 'issuetracker/bugs/bug.html')
+    bug = bug_id
+
+    return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug_id})

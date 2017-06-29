@@ -1,9 +1,32 @@
+{% block head_js %}
+    <script>
+    function load_comments(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = "http://icehockeysite.disqus.com/embed.js";
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      var ldr = document.getElementById('comment_loader');
+      ldr.parentNode.removeChild(ldr);
+    }
+
+    function vote(){
+
+    }
+    </script>
+{% endblock %}
+
+{% load bug_extras %}
 <tbody>
-    <tr>
-        <td><a href="{% url 'bug' %}"><h4>{{ bug.title }}</h4></a></td>
+    <tr id="comment_loader" onclick="load_comment()">
+        <td><h4>{{ bug.title }}</h4></td>
         <td>{{ bug.description }}</td>
-        <td>{{ bug.votes }}</td>
+        <td><button class="btn-primary">{{ bug.votes }}</button>
+        {% autoescape off %}
+            {% user_vote_button bug user %}
+        {% endautoescape %}</td>
         <td>{{ bug.status }}</td>
         <td>{{ bug.updated }}</td>
+    </tr>
+    <tr id="disqus_thread">
+
     </tr>
 </tbody>

@@ -18,6 +18,7 @@ def forum(request):
     return render(request, 'forum/forum.html', {'subjects': Subject.objects.all()})
 
 
+@login_required(login_url='/login/')
 def threads(request, subject_id):
 
     subject = get_object_or_404(Subject, pk=subject_id)
@@ -81,6 +82,7 @@ def new_thread(request, subject_id):
     return render(request, 'forum/thread_form.html', args)
 
 
+@login_required(login_url='/login/')
 def thread(request, thread_id):
 
     thread_ = get_object_or_404(Thread, pk=thread_id)
@@ -114,7 +116,7 @@ def new_post(request, thread_id):
     args = {
         'form': form,
         'form_action': reverse('new_post', args={thread.id}),
-        'button_text': 'Update Post'
+        'button_text': 'New Post'
     }
 
     args.update(csrf(request))
