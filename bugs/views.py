@@ -93,8 +93,15 @@ def bug_tracker(request):
     return render(request, 'issuetracker/bugs/bugs.html', {"bugs": bugs})
 
 
-def bug_vote(request, bug_id):
+def bug_vote(request, id):
 
-    bug = bug_id
+    bug = get_object_or_404(Bug, pk=id)
 
-    return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug_id})
+    return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})
+
+
+def bug_comment(request, id):
+
+    bug = get_object_or_404(Bug, pk=id)
+
+    return render(request, 'issuetracker/bugs/bug.html', {'bug': bug})

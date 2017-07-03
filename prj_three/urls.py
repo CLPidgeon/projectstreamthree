@@ -23,6 +23,7 @@ from paypal.standard.ipn import urls as paypal_urls
 from paypal_store import views as paypal_views
 from magazines import views as magazine_views
 from threads import views as forum_views
+from progress import views as progress_views
 
 
 urlpatterns = [
@@ -65,6 +66,9 @@ urlpatterns = [
     # Issue Tracker
     url(r'bugs/', include('bugs.urls')),
     url(r'features/', include('features.urls')),
+
+    # Charts
+    url(r'^progress/', progress_views.charts),
 ]
 
 

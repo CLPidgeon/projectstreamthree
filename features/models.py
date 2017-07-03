@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 
 # Create your models here.
@@ -25,3 +26,9 @@ class Feature(models.Model):
 
         return self.title
 
+
+class Comments(models.Model):
+
+    feature = models.ForeignKey(Feature, related_name='comments')
+    comments = models.CharField(max_length=255, default='')
+    created_at = models.DateTimeField(default=timezone.now)

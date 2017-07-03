@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
+    <h2>{{ bug.title }}</h2>
+    <p>{{ bug.description }}</p>
+    <hr>
+    {% load disqus_tags %}
+    {% set_disqus_title bug.title %}
+    {% disqus_show_comments %}
+{% endblock %}

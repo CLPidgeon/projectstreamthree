@@ -4,29 +4,25 @@
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = "http://icehockeysite.disqus.com/embed.js";
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      var ldr = document.getElementById('comment_loader');
-      ldr.parentNode.removeChild(ldr);
     }
 
-    function vote(){
-
+    function add_vote(votes){
+       count = votes.count()
     }
     </script>
 {% endblock %}
 
 {% load bug_extras %}
 <tbody>
-    <tr id="comment_loader" onclick="load_comment()">
-        <td><h4>{{ bug.title }}</h4></td>
+    <tr>
+        <td>{{ bug.title }}</td>
         <td>{{ bug.description }}</td>
-        <td><button class="btn-primary">{{ bug.votes }}</button>
+        <td><button class="btn-primary" onclick="add_vote(votes)">{{ bug.votes }}</button>
         {% autoescape off %}
             {% user_vote_button bug user %}
         {% endautoescape %}</td>
         <td>{{ bug.status }}</td>
         <td>{{ bug.updated }}</td>
-    </tr>
-    <tr id="disqus_thread">
-
+        <td><button class="btn btn-default" onclick="location.href={{ bug.id }}">View Comments</button></td>
     </tr>
 </tbody>

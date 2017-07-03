@@ -18,6 +18,7 @@ def user_vote_button(feature, user):
 
             return link
 
+
     return ""
 
 

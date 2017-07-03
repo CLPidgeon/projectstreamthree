@@ -2,14 +2,14 @@
 
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
 from features.serializers import FeatureSerializer
 from features.models import Feature
-from forms import FeatureForm
+from forms import FeatureForm, CommentForm
 
 
 # Create your views here.
@@ -69,6 +69,7 @@ class FeatureView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@login_required(login_url='/login/')
 def feature_tracker(request):
 
     features = Feature.objects.all()
@@ -92,7 +93,18 @@ def new_feature(request):
     return render(request, 'issuetracker/features/featureform.html', {'form': form})
 
 
-def feature(request):
+def feature_comment(request, id):
 
-    return render(request, 'issuetracker/features/feature.html')
+    feature = get_object_or_404(Feature, pk=id)
 
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+
+            comments = form.save(commit=False)
+            comments.save()
+            return redirect(feature_tracker)
+    else:
+        form = CommentForm
+
+    return render(request, 'issuetracker/features/feature.html', {'feature': feature, 'form': form})

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Fixes</h2>
+    <p>This chart shows how many bugs and features are fixed on a daily / weekly /monthly / yearly basis.</p>
+    {% for item in bug_status %}
+        <p>{{ bug_status }}</p>
+    {% endfor %}
+    {% for item in feature_status %}
+        <p>{{ feature_status }}</p>
+    {% endfor %}
+{% endblock %}

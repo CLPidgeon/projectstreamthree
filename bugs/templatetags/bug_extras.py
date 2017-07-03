@@ -13,7 +13,7 @@ def user_vote_button(bug, user):
     if not vote:
         if user.is_authenticated():
             link = """
-           <a href="%s" class="btn btn-default btn-sm" onclick="vote()">
+           <a href="%s" class="btn btn-default btn-sm" onclick="vote(Bug)">
              I have this!
            </a>
            </div>""" % reverse('bug_vote', kwargs={'bug_id': bug.id})
@@ -24,12 +24,9 @@ def user_vote_button(bug, user):
 
 
 @register.filter
-def vote_total(bug):
+def add_vote(bug):
 
-    count = bug.votes.count()
-    if count == 0:
-        return 0
+    total = bug.votes.count()
+    total += 1
 
-    total_votes = bug.votes.count()
-
-    return total_votes
+    return total

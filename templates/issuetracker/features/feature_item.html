@@ -1,12 +1,7 @@
-{% block head_js %}
-    <script>
-
-    </script>
-{% endblock %}
 {% load feature_extras %}
 <tbody>
     <tr>
-        <td><a href="{% url 'feature' %}"><h4>{{ feature.title }}</h4></a></td>
+        <td>{{ feature.title }}</td>
         <td>{{ feature.description }}</td>
         <td><button class="btn-primary">{{ feature.votes }}</button>
         {% autoescape off %}
@@ -14,5 +9,6 @@
         {% endautoescape %}</td>
         <td>{{ feature.status }}</td>
         <td>{{ feature.updated }}</td>
+        <td><button class="btn btn-default" onclick="location.href={{ feature.id }}">View Comments</button></td>
     </tr>
 </tbody>

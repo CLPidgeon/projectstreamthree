@@ -35,6 +35,7 @@ def new_post(request):
         form = BlogPostForm()
     return render(request, 'blogpostform.html', {'form': form})
 
+
 def edit_post(request, id):
 
     post = get_object_or_404(Post, pk=id)
