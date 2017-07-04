@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
-{% load bootstrap_tags %}
 {% block content %}
     <h2>{{ bug.title }}</h2>
     <p>{{ bug.description }}</p>
-    <hr>
-    {% load disqus_tags %}
-    {% set_disqus_title bug.title %}
-    {% disqus_show_comments %}
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'bug_comment' bug.id %}" class="btn btn-primary">New Comment</a></p>
+    {% endif %}
+    <article>
+        {% for comments in bug.comments.all %}
+            {% include 'issuetracker/bugs/comments.html' %}
+        {% endfor %}
+    </article>
 {% endblock %}

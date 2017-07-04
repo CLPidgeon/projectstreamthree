@@ -25,3 +25,10 @@ class Bug(models.Model):
     def __unicode__(self):
 
         return self.title
+
+
+class Comments(models.Model):
+
+    bug = models.ForeignKey(Bug, related_name='comments')
+    comments = models.CharField(max_length=255, default='')
+    created_at = models.DateTimeField(default=timezone.now)

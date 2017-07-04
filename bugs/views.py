@@ -10,7 +10,7 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from bugs.serializers import BugSerializer
 from bugs.models import Bug
-from forms import BugForm
+from .forms import BugForm, CommentForm
 
 
 # Create your views here.
@@ -100,8 +100,38 @@ def bug_vote(request, id):
     return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})
 
 
-def bug_comment(request, id):
+def bug(request, bug_id):
 
-    bug = get_object_or_404(Bug, pk=id)
+    bug_ = get_object_or_404(Bug, pk=bug_id)
+    args = {'bug': bug_}
+    args.update(csrf(request))
+    return render(request, 'issuetracker/bugs/bug.html', args)
 
-    return render(request, 'issuetracker/bugs/bug.html', {'bug': bug})
+
+@login_required(login_url='/login/')
+def bug_comment(request, bug_id):
+
+    bug = get_object_or_404(Bug, pk=bug_id)
+
+    if request.method == 'POST':
+
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            comments = form.save(commit=False)
+            comments.bug = bug
+            comments.save()
+            return redirect(reverse('bug', args={bug.pk}))
+    else:
+
+        form = CommentForm()
+
+    args = {
+        'form': form,
+        'form_action': reverse('bug_comment', args={bug.id}),
+        'button_text': 'Add Comment'
+    }
+
+    args.update(csrf(request))
+
+    return render(request, 'issuetracker/bugs/commentform.html', args)
