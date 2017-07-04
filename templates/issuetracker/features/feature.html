@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
-{% load bootstrap_tags %}
 {% block content %}
     <h2>{{ feature.title }}</h2>
     <p>{{ feature.description }}</p>
-    <hr>
-    <form method="post" action="{{ form_action }}">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <article class="form-group">
-            <button type="submit" class="btn btn-primary">{{ button_text }}</button>
-        </article>
-    </form>
-
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'feature_comment' feature.id %}" class="btn btn-primary">New Comment</a></p>
+    {% endif %}
+    <article>
+        {% for comments in feature.comments.all %}
             {% include 'issuetracker/features/comments.html' %}
-
+        {% endfor %}
+    </article>
 {% endblock %}

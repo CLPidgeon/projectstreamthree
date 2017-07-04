@@ -94,10 +94,18 @@ def new_feature(request):
     return render(request, 'issuetracker/features/featureform.html', {'form': form})
 
 
+def feature(request, feature_id):
+
+    feature_ = get_object_or_404(Feature, pk=feature_id)
+    args = {'feature': feature_}
+    args.update(csrf(request))
+    return render(request, 'issuetracker/features/feature.html', args)
+
+
+@login_required(login_url='/login/')
 def feature_comment(request, feature_id):
 
     feature = get_object_or_404(Feature, pk=feature_id)
-    comments = Comments.objects.all()
 
     if request.method == 'POST':
 
@@ -107,7 +115,7 @@ def feature_comment(request, feature_id):
             comments = form.save(commit=False)
             comments.feature = feature
             comments.save()
-            return redirect(reverse('feature_comment', args={feature.pk}))
+            return redirect(reverse('feature', args={feature.pk}))
     else:
 
         form = CommentForm()
@@ -120,4 +128,4 @@ def feature_comment(request, feature_id):
 
     args.update(csrf(request))
 
-    return render(request, 'issuetracker/features/feature.html', args, {'comments': comments})
+    return render(request, 'issuetracker/features/commentform.html', args)
