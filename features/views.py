@@ -2,14 +2,15 @@
 
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
 from features.serializers import FeatureSerializer
-from features.models import Feature
+from features.models import Feature, Comments
 from forms import FeatureForm, CommentForm
+from django.template.context_processors import csrf
 
 
 # Create your views here.
@@ -93,18 +94,30 @@ def new_feature(request):
     return render(request, 'issuetracker/features/featureform.html', {'form': form})
 
 
-def feature_comment(request, id):
+def feature_comment(request, feature_id):
 
-    feature = get_object_or_404(Feature, pk=id)
+    feature = get_object_or_404(Feature, pk=feature_id)
+    comments = Comments.objects.all()
 
     if request.method == 'POST':
-        form = CommentForm(request.POST, request.FILES)
+
+        form = CommentForm(request.POST)
+
         if form.is_valid():
-
             comments = form.save(commit=False)
+            comments.feature = feature
             comments.save()
-            return redirect(feature_tracker)
+            return redirect(reverse('feature_comment', args={feature.pk}))
     else:
-        form = CommentForm
 
-    return render(request, 'issuetracker/features/feature.html', {'feature': feature, 'form': form})
+        form = CommentForm()
+
+    args = {
+        'form': form,
+        'form_action': reverse('feature_comment', args={feature.id}),
+        'button_text': 'Add Comment'
+    }
+
+    args.update(csrf(request))
+
+    return render(request, 'issuetracker/features/feature.html', args, {'comments': comments})

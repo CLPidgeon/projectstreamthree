@@ -4,12 +4,14 @@
     <h2>{{ feature.title }}</h2>
     <p>{{ feature.description }}</p>
     <hr>
-    <form method="POST" action="{{ form_action }}">
+    <form method="post" action="{{ form_action }}">
         {% csrf_token %}
         {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-default">Add Comment</button>
+        <article class="form-group">
+            <button type="submit" class="btn btn-primary">{{ button_text }}</button>
+        </article>
     </form>
-    {% for comment in comments %}
-        <p>{{ comment.comments }}</p>
-    {% endfor %}
+
+            {% include 'issuetracker/features/comments.html' %}
+
 {% endblock %}
