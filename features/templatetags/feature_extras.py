@@ -20,11 +20,3 @@ def user_vote_button(feature, user):
 
 
     return ""
-
-
-@register.filter
-def vote_total(feature):
-
-    count = feature.votes.count()
-
-    return count

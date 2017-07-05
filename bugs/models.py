@@ -20,7 +20,6 @@ class Bug(models.Model):
     description = models.CharField(max_length=255, null=False)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default='Todo')
     updated = models.DateTimeField(default=timezone.now)
-    votes = models.IntegerField(default=0)
 
     def __unicode__(self):
 
@@ -32,3 +31,9 @@ class Comments(models.Model):
     bug = models.ForeignKey(Bug, related_name='comments')
     comments = models.CharField(max_length=255, default='')
     created_at = models.DateTimeField(default=timezone.now)
+
+
+class Vote(models.Model):
+
+    bug = models.ForeignKey(Bug, related_name='bug_votes')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='bug_votes')

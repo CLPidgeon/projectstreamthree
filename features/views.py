@@ -129,3 +129,10 @@ def feature_comment(request, feature_id):
     args.update(csrf(request))
 
     return render(request, 'issuetracker/features/commentform.html', args)
+
+
+def feature_vote(request, feature_id):
+
+    feature = get_object_or_404(Feature, pk=feature_id)
+
+    return render(request, 'issuetracker/features/feature_vote.html', {'feature': feature})

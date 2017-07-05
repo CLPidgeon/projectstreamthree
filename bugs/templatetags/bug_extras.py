@@ -8,12 +8,12 @@ register = template.Library()
 @register.simple_tag
 def user_vote_button(bug, user):
 
-    vote = bug.votes
+    vote = bug.bug_votes.filter(user_id=user.id).first()
 
     if not vote:
         if user.is_authenticated():
             link = """
-           <a href="%s" class="btn btn-default btn-sm" onclick="vote(Bug)">
+           <a href="%s" class="btn btn-default btn-sm">
              I have this!
            </a>
            </div>""" % reverse('bug_vote', kwargs={'bug_id': bug.id})
@@ -24,9 +24,8 @@ def user_vote_button(bug, user):
 
 
 @register.filter
-def add_vote(bug):
+def total_votes(bug_id):
 
-    total = bug.votes.count()
-    total += 1
+    count = bug_id.bug_votes.count()
 
-    return total
+    return count

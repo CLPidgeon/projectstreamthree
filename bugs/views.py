@@ -86,18 +86,12 @@ def new_bug(request):
     return render(request, 'issuetracker/bugs/bugform.html', {'form': form})
 
 
+@login_required(login_url='/login/')
 def bug_tracker(request):
 
     bugs = Bug.objects.all()
 
     return render(request, 'issuetracker/bugs/bugs.html', {"bugs": bugs})
-
-
-def bug_vote(request, id):
-
-    bug = get_object_or_404(Bug, pk=id)
-
-    return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})
 
 
 def bug(request, bug_id):
@@ -135,3 +129,19 @@ def bug_comment(request, bug_id):
     args.update(csrf(request))
 
     return render(request, 'issuetracker/bugs/commentform.html', args)
+
+
+@login_required(login_url='/login/')
+def bug_vote(request, bug_id):
+
+    bug = Bug.objects.get(id=bug_id)
+    bug_votes = bug.bug_votes.filter(user=request.user)
+
+    if bug_votes:
+        
+        messages.error(request, 'You have already voted for this!')
+        return redirect(reverse('bug', args={bug_id}))
+
+
+
+    return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})

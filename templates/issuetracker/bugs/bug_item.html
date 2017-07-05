@@ -1,23 +1,9 @@
-{% block head_js %}
-    <script>
-    function load_comments(){
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = "http://icehockeysite.disqus.com/embed.js";
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }
-
-    function add_vote(votes){
-       count = votes.count()
-    }
-    </script>
-{% endblock %}
-
 {% load bug_extras %}
 <tbody>
     <tr>
         <td>{{ bug.title }}</td>
         <td>{{ bug.description }}</td>
-        <td><button class="btn-primary" onclick="add_vote(votes)">{{ bug.votes }}</button>
+        <td><button class="btn-primary">Votes</button>
         {% autoescape off %}
             {% user_vote_button bug user %}
         {% endautoescape %}</td>
