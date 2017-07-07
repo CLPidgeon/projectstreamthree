@@ -135,14 +135,6 @@ def bug_comment(request, bug_id):
 def bug_vote(request, bug_id):
 
     bug = Bug.objects.get(id=bug_id)
-    voted = bug.bug_votes.filter(user=request.user)
-
-    if voted:
-        
-        messages.error(request, 'You have already voted for this!')
-        return redirect(reverse('bug', args={bug_id}))
-
-    bug = Bug.objects.get(id=bug_id)
     bug.bug_votes.create(bug=bug_id, user=request.user)
 
     return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})

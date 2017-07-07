@@ -3,14 +3,15 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.contrib import messages
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from features.serializers import FeatureSerializer
-from features.models import Feature
+from features.models import Feature, Vote
 from forms import FeatureForm, CommentForm
-from django.template.context_processors import csrf
 
 
 # Create your views here.
@@ -133,16 +134,8 @@ def feature_comment(request, feature_id):
 
 @login_required(login_url='/login/')
 def feature_vote(request, feature_id):
-    # bug = Bug.objects.get(id=bug_id)
-    # voted = bug.vote.filter(user=request.user)
 
-    # if voted:
-
-    # messages.error(request, 'You have already voted for this!')
-    # return redirect(reverse('bug', args={bug_id}))
-
-    feature_voting = feature_id
-    feature_votes = feature_voting.votes
-    feature_votes += 1
+    feature = Feature.objects.get(id=feature_id)
+    feature.feature_votes.create(feature=feature_id, user=request.user)
 
     return render(request, 'issuetracker/features/feature_vote.html', {'feature': feature})

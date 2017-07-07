@@ -9,7 +9,11 @@ register = template.Library()
 @register.simple_tag
 def user_vote_button(feature, user):
 
-    if user.subscription_end > timezone.now():
+    vote = feature.feature_votes.filter(user_id=user.id).first()
+
+    if not vote:
+
+        if user.subscription_end > timezone.now():
             link = """
            <a href="%s" class="btn btn-default btn-sm" onclick="vote()">
              I want this!
@@ -20,3 +24,11 @@ def user_vote_button(feature, user):
 
 
     return ""
+
+
+@register.filter
+def total_votes(feature_id):
+
+    count = feature_id.feature_votes.count()
+
+    return count
