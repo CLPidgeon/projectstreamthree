@@ -7,7 +7,7 @@ import pandas as pd
 
 
 # Create your views here.
-def charts(request):
+def bug_data(request):
     conn = sqlite3.connect('db.sqlite3')
     bug_status = pd.read_sql_query('SELECT status, updated FROM bugs_bug WHERE status="Done";', conn)
 
@@ -18,3 +18,12 @@ def charts(request):
     return render(request, 'charts.html', {'bug_status': bug_status, 'feature_status': feature_status})
 
 
+def charts(request):
+    conn = sqlite3.connect('db.sqlite3')
+    bug_status = pd.read_sql_query('SELECT status, updated FROM bugs_bug WHERE status="Done";', conn)
+
+    feature_status = pd.read_sql_query('SELECT status, updated FROM features_feature WHERE status="Done"', conn)
+
+    conn.close()
+
+    return render(request, 'charts.html', {'bug_status': bug_status, 'feature_status': feature_status})

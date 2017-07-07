@@ -9,7 +9,7 @@ from rest_framework import status
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from bugs.serializers import BugSerializer
-from bugs.models import Bug
+from bugs.models import Bug, Vote
 from .forms import BugForm, CommentForm
 
 
@@ -135,14 +135,14 @@ def bug_comment(request, bug_id):
 def bug_vote(request, bug_id):
 
     bug = Bug.objects.get(id=bug_id)
-    bug_votes = bug.bug_votes.filter(user=request.user)
+    voted = bug.bug_votes.filter(user=request.user)
 
-    if bug_votes:
+    if voted:
         
         messages.error(request, 'You have already voted for this!')
         return redirect(reverse('bug', args={bug_id}))
 
     bug = Bug.objects.get(id=bug_id)
-    bug_votes.create(bug=bug_id, user=request.user)
+    bug.bug_votes.create(bug=bug_id, user=request.user)
 
     return render(request, 'issuetracker/bugs/bug_vote.html', {'bug': bug})

@@ -7,4 +7,3 @@ from features.models import Feature, Comments
 
 # Register your models here.
 admin.site.register(Feature)
-admin.site.register(Comments)

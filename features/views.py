@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from django.contrib.auth.decorators import login_required
 from features.serializers import FeatureSerializer
-from features.models import Feature, Comments
+from features.models import Feature
 from forms import FeatureForm, CommentForm
 from django.template.context_processors import csrf
 
@@ -131,8 +131,18 @@ def feature_comment(request, feature_id):
     return render(request, 'issuetracker/features/commentform.html', args)
 
 
+@login_required(login_url='/login/')
 def feature_vote(request, feature_id):
+    # bug = Bug.objects.get(id=bug_id)
+    # voted = bug.vote.filter(user=request.user)
 
-    feature = get_object_or_404(Feature, pk=feature_id)
+    # if voted:
+
+    # messages.error(request, 'You have already voted for this!')
+    # return redirect(reverse('bug', args={bug_id}))
+
+    feature_voting = feature_id
+    feature_votes = feature_voting.votes
+    feature_votes += 1
 
     return render(request, 'issuetracker/features/feature_vote.html', {'feature': feature})

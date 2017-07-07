@@ -3,7 +3,7 @@
     <tr>
         <td>{{ bug.title }}</td>
         <td>{{ bug.description }}</td>
-        <td><button class="btn-primary">Votes</button>
+        <td><button class="btn-primary">{{ bug | total_votes }}</button>
         {% autoescape off %}
             {% user_vote_button bug user %}
         {% endautoescape %}</td>

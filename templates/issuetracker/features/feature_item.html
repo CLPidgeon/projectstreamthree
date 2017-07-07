@@ -3,7 +3,7 @@
     <tr>
         <td>{{ feature.title }}</td>
         <td>{{ feature.description }}</td>
-        <td><button class="btn-primary" onclick="add_vote(votes)">{{ feature.votes }}</button>
+        <td><button class="btn-primary">{{ feature.votes }}</button>
         {% autoescape off %}
             {% user_vote_button feature user %}
         {% endautoescape %}</td>
