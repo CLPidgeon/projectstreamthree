@@ -20,7 +20,6 @@ class Feature(models.Model):
     description = models.CharField(max_length=255, null=False)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default='Todo')
     updated = models.DateTimeField(default=timezone.now)
-    votes = models.IntegerField(default=0)
 
     def __unicode__(self):
 

@@ -29,6 +29,8 @@ from progress import views as progress_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index, name='index'),
+    url(r'^data/bug', progress_views.bug_data),
+    url(r'^data/feature', progress_views.feature_data),
 
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
