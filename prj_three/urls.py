@@ -71,8 +71,6 @@ urlpatterns = [
     url(r'bugs/', include('bugs.urls')),
     url(r'features/', include('features.urls')),
 
-    # Charts
-    url(r'^progress/', progress_views.charts),
 ]
 
 

@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad961911-7ae1-41b2-983f-5d97f46e84fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/subscription_webhook.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templates/blogpostform.html" afterPath="$PROJECT_DIR$/blog/templates/blogpostform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templates/blogposts.html" afterPath="$PROJECT_DIR$/blog/templates/blogposts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/templates/postdetail.html" afterPath="$PROJECT_DIR$/blog/templates/postdetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bugs/templatetags/bug_extras.py" afterPath="$PROJECT_DIR$/bugs/templatetags/bug_extras.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/templatetags/feature_extras.py" afterPath="$PROJECT_DIR$/features/templatetags/feature_extras.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prj_three/settings.py" afterPath="$PROJECT_DIR$/prj_three/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prj_three/urls.py" afterPath="$PROJECT_DIR$/prj_three/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/progress/views.py" afterPath="$PROJECT_DIR$/progress/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/comment_details.html" afterPath="$PROJECT_DIR$/templates/forum/comment_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/forum.html" afterPath="$PROJECT_DIR$/templates/forum/forum.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/post.html" afterPath="$PROJECT_DIR$/templates/forum/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/post_form.html" afterPath="$PROJECT_DIR$/templates/forum/post_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/thread.html" afterPath="$PROJECT_DIR$/templates/forum/thread.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/thread_form.html" afterPath="$PROJECT_DIR$/templates/forum/thread_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/forum/threads.html" afterPath="$PROJECT_DIR$/templates/forum/threads.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/bug.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/bug.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/bug_item.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/bug_item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/bugform.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/bugform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/bugs.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/bugs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/commentform.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/commentform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/bugs/comments.html" afterPath="$PROJECT_DIR$/templates/issuetracker/bugs/comments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/features/commentform.html" afterPath="$PROJECT_DIR$/templates/issuetracker/features/commentform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/features/comments.html" afterPath="$PROJECT_DIR$/templates/issuetracker/features/comments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/features/feature.html" afterPath="$PROJECT_DIR$/templates/issuetracker/features/feature.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/features/feature_item.html" afterPath="$PROJECT_DIR$/templates/issuetracker/features/feature_item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/issuetracker/features/features.html" afterPath="$PROJECT_DIR$/templates/issuetracker/features/features.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/magazines/magazines.html" afterPath="$PROJECT_DIR$/templates/magazines/magazines.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paypal/paypal_return.html" afterPath="$PROJECT_DIR$/templates/paypal/paypal_return.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/profile.html" afterPath="$PROJECT_DIR$/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/threads/templatetags/thread_extras.py" afterPath="$PROJECT_DIR$/threads/templatetags/thread_extras.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,11 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="66" column="59" lean-forward="false" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
+            <state relative-caret-position="249">
+              <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -80,17 +47,17 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prj_three/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="397">
+              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/progress/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="264">
               <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
@@ -207,12 +174,12 @@
         <option value="$PROJECT_DIR$/blog/templates/blogpostform.html" />
         <option value="$PROJECT_DIR$/blog/templates/blogposts.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/issuetracker/bugs/bugs.html" />
         <option value="$PROJECT_DIR$/templates/forum/forum.html" />
         <option value="$PROJECT_DIR$/threads/templatetags/thread_extras.py" />
-        <option value="$PROJECT_DIR$/prj_three/urls.py" />
         <option value="$PROJECT_DIR$/progress/views.py" />
+        <option value="$PROJECT_DIR$/prj_three/urls.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -1069,14 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="66" column="59" lean-forward="false" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1087,22 +1046,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prj_three/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/progress/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="264">
           <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
             <marker date="1500311012301" expanded="true" signature="607:637" ph="SELECT statu... features_feature" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prj_three/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
