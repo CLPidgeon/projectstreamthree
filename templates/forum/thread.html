@@ -3,59 +3,52 @@
 {% load staticfiles %}
 {% block content %}
     <section class="row header">
-        <section class="container">
-            <h2>{{ thread.name }}</h2>
+        <h2>{{ thread.name }}</h2>
+    </section>
+    {% if thread.poll %}
+        <section class="poll-container">
             <article class="col-12">
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <th>Created</th>
-                            <th>Owner</th>
-                            <th>Last Post</th>
-                        </tr>
-                        <tr>
-                            <td><time datetime="{{ thread.created_at }}">{{ thread.created_at |started_time }}</time> </td>
-                            <td>{{ thread.user.username }}</td>
-                            <td>{% last_posted_user_name thread %}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-            {% if thread.poll %}
-                <section class="container">
-                <article class="col-md-6">
-                    <h2>Poll</h2>
-                    <strong>{{ thread.poll.question }}</strong>
-                    <br><br>
-                    <p>Here's how the vote is going so far:</p>
-                    {% for subject in thread.poll.subjects.all %}
-                            <div class="col-md-10">
-                                <strong>{{ subject.name }}</strong>
-                                <span class="pull-right">{{ subject|vote_percentage }}%</span>
-                            </div>
-                            {% autoescape off %}
-                            {% user_vote_button thread subject user %}
-                            {% endautoescape %}
+                <h2>Poll</h2>
+                <strong>{{ thread.poll.question }}</strong>
+                <p>Here's how the vote is going so far:</p>
+                {% for subject in thread.poll.subjects.all %}
+                    <section class="row">
+                        <article class="col-md-4 col-sm-4 col-xs-4">
+                            <strong>{{ subject.name }}</strong>
+                            <span class="pull-right">{{ subject|vote_percentage }}%</span>
+                        </article>
 
-                            <div class="col-md-10">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-value="{{ subject|vote_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ subject|vote_percentage }}%;">
-
-                                    </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-value="{{ subject|vote_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ subject|vote_percentage }}%;">
                                 </div>
                             </div>
-                        {% endfor %}
-                </article>
-                </section>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <p><a href="{% url 'new_post' thread.id %}" class="btn btn-primary">New Post</a></p>
-            {% endif %}
+                        </div>
+
+                        {% autoescape off %}
+                            {% user_vote_button thread subject user %}
+                        {% endautoescape %}
+                    </section>
+                {% endfor %}
+            </article>
         </section>
+    {% endif %}
+
+    <section>
+        <table class="col-12">
+            <tbody>
+                <tr>
+                    <th>User</th>
+                    <th>Post</th>
+                    <th>Posted</th>
+                </tr>
+                {% for post in thread.posts.all %}
+                    {% include 'forum/post.html' %}
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if user.is_authenticated %}
+            <p><a href="{% url 'new_post' thread.id %}" class="btn page-button">New Post</a></p>
+        {% endif %}
     </section>
-    <article class="container">
-        {% for post in thread.posts.all %}
-            {% include 'forum/post.html' %}
-        {% endfor %}
-    </article>
 {% endblock %}

@@ -3,12 +3,12 @@
     <tr>
         <td>{{ feature.title }}</td>
         <td>{{ feature.description }}</td>
-        <td><button class="btn-primary">{{ feature | total_votes }}</button>
+        <td style="text-align: center;"><span class="vote-badge">{{ feature | total_votes }}</span>
         {% autoescape off %}
             {% user_vote_button feature user %}
         {% endautoescape %}</td>
         <td>{{ feature.status }}</td>
         <td>{{ feature.updated }}</td>
-        <td><button class="btn btn-default" onclick="location.href={{ feature.id }}">View Comments</button></td>
+        <td><button class="btn page-button" onclick="location.href={{ feature.id }}">View Comments</button></td>
     </tr>
 </tbody>

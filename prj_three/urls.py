@@ -29,8 +29,10 @@ from progress import views as progress_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index, name='index'),
+
+    # Charts
     url(r'^data/bug', progress_views.bug_data),
-    url(r'^data/feature', progress_views.feature_data),
+    url(r'^progress/', progress_views.feature_data),
 
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
@@ -78,6 +80,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 
 if settings.DEBUG:
+
     import debug_toolbar
 
     urlpatterns += [

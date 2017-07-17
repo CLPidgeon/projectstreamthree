@@ -28,7 +28,7 @@ DEBUG = True
 
 SITE_ID = 2
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://cdb19f9e.ngrok.io']
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -38,7 +38,7 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_vfYulusugV6nOunj56tb5ELk')
 
 # Paypal environment variables
 SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_NOTIFY_URL = 'http://cdb19f9e.ngrok.io/a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = 'clare@pidge.com'
 
 # Disqus
@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'progress',
     'pandas',
     'numpy',
+    'sqlalchemy',
 ]
 
 INTERNAL_IPS = ('127.0.0.1',)

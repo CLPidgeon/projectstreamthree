@@ -2,11 +2,11 @@
 {% load thread_extras %}
 {% block content %}
     <section class="row header">
-        <article class="jumbotron"><h1>{{ subject.name }}</h1></article>
+        <h1>{{ subject.name }}</h1>
     </section>
     <section class="col-12">
         {% if user.is_authenticated %}
-            <p><a href="{% url 'new_thread' subject.id %}" class="btn btn-primary">New Thread</a></p>
+            <p><a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a></p>
         {% endif %}
         {% for thread in subject.threads.all %}
             {% include 'forum/thread_item.html' %}

@@ -5,7 +5,7 @@
             <h1>Bug Issues</h1>
             <p>Found a bug? Report it here.</p>
             {% if user.is_authenticated %}
-            <p><button class="btn btn-primary" onclick="location.href='{% url 'new_bug' %}'">Report Bug!</button></p>
+            <p><button class="btn page-button" onclick="location.href='{% url 'new_bug' %}'">Report Bug!</button></p>
             {% endif %}
         </div>
         <table class="table">

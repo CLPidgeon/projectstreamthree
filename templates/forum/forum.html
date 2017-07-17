@@ -6,7 +6,7 @@
         <section class="subject">
             <h2><a href="{% url 'threads' subject.id %}">{{ subject.name }}</a></h2>
             <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
-            <table>
+            <table style="text-align: center;" class="col-12">
                 <tr>
                     <th>Threads</th>
                     <th>Posts</th>

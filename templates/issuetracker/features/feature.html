@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>{{ feature.title }}</h2>
-    <p>{{ feature.description }}</p>
+    <h1>Feature: {{ feature.title }}</h1>
+    <p>Idea: {{ feature.description }}</p>
         {% if user.is_authenticated %}
-        <p><a href="{% url 'feature_comment' feature.id %}" class="btn btn-primary">New Comment</a></p>
+        <p><a href="{% url 'feature_comment' feature.id %}" class="btn page-button">New Comment</a></p>
     {% endif %}
     <article>
         {% for comments in feature.comments.all %}

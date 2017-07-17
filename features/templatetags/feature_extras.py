@@ -15,7 +15,7 @@ def user_vote_button(feature, user):
 
         if user.subscription_end > timezone.now():
             link = """
-           <a href="%s" class="btn btn-default btn-sm" onclick="vote()">
+           <a href="%s" class="btn vote-button btn-sm" onclick="vote()">
              I want this!
            </a>
            </div>""" % reverse('feature_vote', kwargs={'feature_id': feature.id})

@@ -9,33 +9,31 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.css' %}">
     {% block head_js %}{% endblock head_js %}
 </head>
 <body>
-    <nav class="navbar navbar-fixed-top navbar-custom">
-        <section class="container-fluid">
-            <section class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapsingList" aria-expanded="false">
-                    <span class="icon-bar" ></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </section>
+    <section class="page">
+        <nav class="navbar navbar-fixed-top navbar-custom">
+            <section class="container">
+                <section class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapsingList">
+                        <span class="icon-bar" ></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </section>
 
-            <section class="collapse navbar-collapse" id="myCollapsingList">
-                <ul class="nav nav-justified">
+                <ul id="myCollapsingList" class="nav nav-justified collapse navbar-collapse">
                     <li><a href="/">Home</a></li>
                     <li><a href="/pages/about/">About</a></li>
                     <li><a href="/forum/">Forum</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/bugs/tracker/">Bugs</a></li>
-                    <li><a href="/features/tracker/">Features</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Issue Tracker<span class="caret"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Tracker<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/bugs/tracker/">Bugs</a></li>
@@ -47,37 +45,34 @@
                     <li><a href="/pages/contact/">Contact</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">Profile</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li><a href="{% url 'logout' %}">LogOut</a></li>
                     {% else %}
                     <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'login' %}">LogIn</a></li>
                     {% endif %}
                 </ul>
             </section>
-        </section>
-    </nav>
+        </nav>
 
-    <section class="container-fluid">
-        <hr>
-        <section class="banner">
+        <article class="banner">
             <h1>The Ice Hockey Site</h1>
             <p>Your home for all things ice hockey!</p>
-        </section>
+        </article>
 
         <section class="page-content">
             {% block content %}
             {% endblock %}
         </section>
 
-        <hr>
-        <footer>
-            <p>Made By Me, Myself & Django with a bit of help from HTML, CSS, Bootstrap and JavaScript</p>
+        <footer class="navbar-fixed-bottom footer-content">
             <p>
                 <a href="http://www.facebook.com"><img src="/media/img/facebook.jpeg" alt="facebook page" height="50px" width="50px"></a>
                 <a href="http://www.twitter.com"><img src="/media/img/twitter.jpeg" alt="twitter stream" height="50px" width="50px"></a>
                 <a href="http://www.instagram.com"><img src="/media/img/instagram.jpg" alt="instagram feed" height="50px" width="50px"></a>
             </p>
         </footer>
+
     </section>
+
 </body>
 </html>

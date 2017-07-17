@@ -13,7 +13,7 @@ def user_vote_button(bug, user):
     if not vote:
         if user.is_authenticated():
             link = """
-           <a href="%s" class="btn btn-default btn-sm">
+           <a href="%s" class="btn vote-button btn-sm">
              I have this!
            </a>
            </div>""" % reverse('bug_vote', kwargs={'bug_id': bug.id})

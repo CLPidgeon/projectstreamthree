@@ -15,9 +15,9 @@
     <div class="row">
         <div class="col-12">
             <p>{{ post.content }}</p>
-            <p><button class="btn btn-default" onclick="location.href='/blog'">Back To Blog</button></p>
+            <p><button class="btn page-button" onclick="location.href='/blog'">Back To Blog</button></p>
             {% if user.is_staff %}
-            <p><button class="btn btn-default" onclick="location.href='edit'">Edit Blog</button></p>
+            <p><button class="btn staff-button" onclick="location.href='edit'">Edit Blog</button></p>
             {% endif %}
             <p><strong>Published: </strong>{{ post.published_date }}| <strong>Views:</strong> {{ post.views }}| <strong>Tag:</strong> {{ post.tag }}</p>
             {% load disqus_tags %}

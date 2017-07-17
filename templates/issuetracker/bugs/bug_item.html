@@ -3,12 +3,12 @@
     <tr>
         <td>{{ bug.title }}</td>
         <td>{{ bug.description }}</td>
-        <td><button class="btn-primary">{{ bug | total_votes }}</button>
+        <td style="text-align: center;" ><span class="vote-badge">{{ bug | total_votes }}</span>
         {% autoescape off %}
             {% user_vote_button bug user %}
         {% endautoescape %}</td>
         <td>{{ bug.status }}</td>
         <td>{{ bug.updated }}</td>
-        <td><button class="btn btn-default" onclick="location.href={{ bug.id }}">View Comments</button></td>
+        <td><button class="btn page-button" onclick="location.href={{ bug.id }}">View Comments</button></td>
     </tr>
 </tbody>

@@ -1,16 +1,7 @@
 {% load staticfiles %}
 {% load emoticons_tags %}
-<section class="row comment col-12">
-    <article class="col-md-3">
-        <p>{{ post.user.username }}</p>
-        <p>{{ post.user.posts.count }}</p>
-    </article>
-    <section class="col-md-9">
-        <article class="comment-content">
-            {% autoescape off %}
-                {{ post.comment | emoticons }}
-            {% endautoescape %}
-        </article>
-        {% include 'forum/comment_details.html' %}
-    </section>
-</section>
+<tr>
+    <td>{{ post.user.username }}</td>
+    <td>{% autoescape off %}{{ post.comment | emoticons }}{% endautoescape %}</td>
+    <td>{% include 'forum/comment_details.html' %}</td>
+</tr>

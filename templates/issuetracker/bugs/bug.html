@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>{{ bug.title }}</h2>
-    <p>{{ bug.description }}</p>
+    <h1>Bug: {{ bug.title }}</h1>
+    <p>Problem: {{ bug.description }}</p>
         {% if user.is_authenticated %}
-        <p><a href="{% url 'bug_comment' bug.id %}" class="btn btn-primary">New Comment</a></p>
+        <p><a href="{% url 'bug_comment' bug.id %}" class="btn page-button">Add Comment</a></p>
     {% endif %}
+    <hr>
     <article>
         {% for comments in bug.comments.all %}
             {% include 'issuetracker/bugs/comments.html' %}

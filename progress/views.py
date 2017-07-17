@@ -30,7 +30,7 @@ def feature_data(request):
 
     feature_status = pd.read_sql_query('SELECT * FROM features_feature', conn)
 
-    return json.dumps(feature_status)
+    return json.dumps(list(feature_status))
 
 
 def charts(request):
