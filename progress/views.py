@@ -3,34 +3,35 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 import sqlite3
-import pandas as pd
 import json
+from django.http import HttpResponse
 
 
 # Create your views here.
-def bug_data(request):
-
-    fields = {
-        '_id': False, 'title': True, 'description': True,
-        'status': True, 'updated': True,
-    }
-
-    with sqlite3.connect('db.sqlite3') as conn:
-
-        bug_table = conn('bugs_bug')
-
-        bugs_data = bug_table.find(fields)
-
-        return json.dumps(list(bugs_data))
-
-
-def feature_data(request):
+def bugs_data(request):
 
     conn = sqlite3.connect('db.sqlite3')
 
-    feature_status = pd.read_sql_query('SELECT * FROM features_feature', conn)
+    c = conn.cursor()
 
-    return json.dumps(list(feature_status))
+    bug_status = c.execute("SELECT updated FROM bugs_bug WHERE status='Done';")
+
+    bug_data = json.dumps(list(bug_status))
+
+    return HttpResponse(bug_data, content_type='text/plain')
+
+
+def features_data(request):
+
+    conn = sqlite3.connect('db.sqlite3')
+
+    c = conn.cursor()
+
+    feature_status = c.execute("SELECT updated FROM features_feature WHERE status='Done';")
+
+    feature_data = json.dumps(list(feature_status))
+
+    return HttpResponse(feature_data, content_type='text/plain')
 
 
 def charts(request):
