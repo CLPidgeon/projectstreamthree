@@ -9,8 +9,14 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dc.css' %}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/crossfilter.js' %}"></script>
+    <script src="{% static 'js/d3.js' %}"></script>
+    <script src="{% static 'js/dc.js' %}"></script>
+    <script src="{% static 'js/queue.js' %}"></script>
+    <script src="{% static 'js/graph.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.css' %}">
     {% block head_js %}{% endblock head_js %}
 </head>
@@ -40,7 +46,7 @@
                             <li><a href="/features/tracker/">Features</a></li>
                         </ul>
                     </li>
-                    <li><a href="/progress/">Progress</a></li>
+                    <li><a href="/features/progress/">Progress</a></li>
                     <li><a href="/magazines/">Subscribe</a></li>
                     <li><a href="/pages/contact/">Contact</a></li>
                     {% if user.is_authenticated %}
@@ -48,7 +54,7 @@
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
                     {% else %}
                     <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">LogIn</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
                 </ul>
             </section>
@@ -57,7 +63,6 @@
         <article class="banner">
             <h1>The Ice Hockey Site</h1>
             <p>Your home for all things ice hockey!</p>
-            <p>Test</p>
         </article>
 
         <section class="page-content">

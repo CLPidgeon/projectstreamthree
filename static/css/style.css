@@ -125,6 +125,33 @@ table thead{
     border-radius: 5px;
 }
 
+.chart {
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+
+.chart-header {
+    text-align: center;
+    border-bottom: 2px darkred solid;
+}
+
+.chart-wrapper {
+    padding-right: 2px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.chart-container {
+    border-radius: 10px;
+    border: 2px darkred solid;
+    background-color: aliceblue;
+    color: black;
+    opacity: 1;
+    height: 350px;
+    margin-bottom: 10px;
+}
+
     @media (max-width: 992px) {
 
             .page {

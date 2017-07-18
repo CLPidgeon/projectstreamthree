@@ -2,38 +2,35 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-import sqlite3
 import json
 from django.http import HttpResponse
+from features.models import Feature
+import datetime
 
 
 # Create your views here.
-def bugs_data(request):
+def featuredata(request):
 
-    conn = sqlite3.connect('db.sqlite3')
+    feature_status = Feature.objects.all()
 
-    c = conn.cursor()
+    features_data = []
 
-    bug_status = c.execute("SELECT updated FROM bugs_bug WHERE status='Done';")
+    def datetime_handler(x):
+        if isinstance(x, datetime.datetime):
+            return x.isoformat()
 
-    bug_data = json.dumps(list(bug_status))
+    for feature in feature_status:
+        feature_data = {
+            'title': feature.title,
+            'description': feature.description,
+            'status': feature.status,
+            'updated': feature.updated}
+        features_data.append(feature_data)
+    feature_dataset = json.dumps(features_data, default=datetime_handler)
 
-    return HttpResponse(bug_data, content_type='text/plain')
-
-
-def features_data(request):
-
-    conn = sqlite3.connect('db.sqlite3')
-
-    c = conn.cursor()
-
-    feature_status = c.execute("SELECT updated FROM features_feature WHERE status='Done';")
-
-    feature_data = json.dumps(list(feature_status))
-
-    return HttpResponse(feature_data, content_type='text/plain')
+    return HttpResponse(feature_dataset, content_type='text/plain')
 
 
-def charts(request):
+def features_charts(request):
 
     return render(request, 'charts.html')

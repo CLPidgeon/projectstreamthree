@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>Fixes</h2>
-    <p>This chart shows how many bugs and features are fixed on a daily / weekly /monthly / yearly basis.</p>
-    {% for item in bug_status %}
-        <p>{{ bug_status }}</p>
-    {% endfor %}
-    {% for item in feature_status %}
-        <p>{{ feature_status }}</p>
-    {% endfor %}
+    <p>These charts shows the status of all requested features and how many I have dealt with.</p>
+    <section class="row">
+        <article class="col-sm-6 chart-container">
+            <header class="chart-header">
+                Features status:
+            </header>
+            <article class="chart-wrapper">
+                <article id="statusChart" class="chart">
+                </article>
+            </article>
+        </article>
+
+        <article class="col-sm-6 chart-container">
+            <header class="chart-header">
+                Yearly Fixes:
+            </header>
+            <article class="chart-wrapper">
+                <article id="yearlyChart" class="chart">
+                </article>
+            </article>
+        </article>
+    </section>
 {% endblock %}
