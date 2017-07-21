@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% load magazine_extras %}
 {% block content %}
+
+    <section>
+        <article class="header">
+            <h1>Paying by card?</h1>
+        </article>
+        <article>
+            <p>Click <a href="/stripe">here</a> to fill in your card details.</p>
+        </article>
+    </section>
+
+    <hr>
+
     <table class="table table-striped subscribe-table">
         <thead>
             <tr>
@@ -21,4 +33,5 @@
             {% endfor %}
         </tbody>
     </table>
+
 {% endblock %}

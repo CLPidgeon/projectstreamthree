@@ -58,6 +58,7 @@ urlpatterns = [
     url(r'^logout/$', accounts_views.logout, name='logout'),
 
     # Stripe
+    url(r'stripe', accounts_views.subscribe, name='subscribe'),
     url(r'^cancel_subscription/$', accounts_views.cancel_subscription, name='cancel_subscription'),
     url(r'^subscriptions_webhook/$', accounts_views.subscriptions_webhook, name='subscriptions_webhook'),
 
@@ -65,7 +66,7 @@ urlpatterns = [
     url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
     url(r'^paypal-return', paypal_views.paypal_return),
     url(r'^paypal-cancel', paypal_views.paypal_cancel),
-    url(r'^magazines/$', magazine_views.all_magazines),
+    url(r'^subscribe/$', magazine_views.all_magazines),
 
     # Issue Tracker
     url(r'bugs/', include('bugs.urls')),

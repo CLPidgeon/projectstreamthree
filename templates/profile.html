@@ -12,7 +12,7 @@
 
         <h2>Subscription Details:</h2>
 
-        {% if user.subscription_end|timeuntil > 0 %}
+
         <p>You have {{ user.subscription_end|timeuntil }} left on your subscription</p>
 
         <p>To cancel your subscription click 'Cancel Subscription' below</p>
@@ -30,10 +30,7 @@
         return false;
         }
         </script>
-            {% else %}
-            <p>You aren't subscribed! Click <a  href="/magazines/">here</a> to subscribe!</p>
-            <p>Subscribing allows you to upvote features you want adding to the site.</p>
-        {% endif %}
+
 
     </section>
 {% endblock %}

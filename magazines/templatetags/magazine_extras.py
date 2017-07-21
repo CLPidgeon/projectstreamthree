@@ -21,7 +21,7 @@ def paypal_form_for(magazine, user):
             "src": 1,
             "sra": 1,
             "item_name": magazine.name,
-            "invoice": uuid.uuid4,
+            "invoice": uuid.uuid4(),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return/" % settings.SITE_URL,
             "cancel_return": "%s/paypal-cancel/" % settings.SITE_URL,
