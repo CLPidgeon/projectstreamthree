@@ -32,6 +32,7 @@ urlpatterns = [
 
     # Charts
     url(r'^progress/feature', progress_views.featuredata),
+    url(r'^progress/bug', progress_views.bugdata),
     url(r'^features/progress', progress_views.features_charts),
 
     # Flatpages

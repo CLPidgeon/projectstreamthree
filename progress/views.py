@@ -5,6 +5,7 @@ from django.shortcuts import render
 import json
 from django.http import HttpResponse
 from features.models import Feature
+from bugs.models import Bug
 import datetime
 
 
@@ -29,6 +30,28 @@ def featuredata(request):
     feature_dataset = json.dumps(features_data, default=datetime_handler)
 
     return HttpResponse(feature_dataset, content_type='text/plain')
+
+
+def bugdata(request):
+
+    bug_status = Feature.objects.all()
+
+    bugs_data = []
+
+    def datetime_handler(x):
+        if isinstance(x, datetime.datetime):
+            return x.isoformat()
+
+    for bug in bug_status:
+        bug_data = {
+            'title': bug.title,
+            'description': bug.description,
+            'status': bug.status,
+            'updated': bug.updated}
+        bugs_data.append(bug_data)
+    bug_dataset = json.dumps(bugs_data, default=datetime_handler)
+
+    return HttpResponse(bug_dataset, content_type='text/plain')
 
 
 def features_charts(request):

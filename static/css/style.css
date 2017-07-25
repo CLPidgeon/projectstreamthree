@@ -7,14 +7,11 @@ html {
 }
 
 body {
-    padding-top: 50px;
-    padding-bottom: 50px;
     color: white;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     opacity: 0.7;
-    background-color: aliceblue;
     font-family: "Calibri";
     border: 2px darkred solid;
 }
@@ -45,6 +42,7 @@ body {
 }
 
 .banner {
+    margin-top:40px;
     padding: 10px;
     background-color: black;
     color: aliceblue;
@@ -102,11 +100,68 @@ table {
     text-align: left;
 }
 
-table thead{
-    color: white;
+.forum {
+    border-bottom: 2px darkblue solid;
 }
 
-.subscribe-table tbody{
+.subject {
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 3px darkblue solid;
+    margin-bottom: 5px;
+    color: darkred;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forum-table th, td{
+    color: darkblue;
+    height:30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.thread-table{
+    background-color: aliceblue;
+    width:100%;
+}
+
+.thread-table th{
+    padding: 10px;
+    border: 3px darkred solid;
+    color: darkblue;
+}
+
+.thread-table td{
+    padding: 10px;
+    border: 3px darkblue solid;
+    color: darkred;
+    text-align: left;
+}
+
+.post-table{
+    width: 100%;
+    background-color: #B71C1C;
+    color: aliceblue;
+}
+
+.post-table th{
+    padding:10px;
+    border: 3px darkred solid;
+    color: darkblue;
+    background-color: aliceblue;
+}
+
+.post-table td{
+    border: 3px aliceblue solid;
+    color: aliceblue;
+}
+
+.post-table tr:nth-child(even){
+    background-color: #283593;
+}
+
+.subscribe-table td{
     color: black;
 }
 
@@ -200,6 +255,10 @@ legend {
 
             .collapse.in {
                 display: block !important;
+            }
+
+            .post-table{
+                width: 100%;
             }
 
         }

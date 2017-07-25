@@ -35,7 +35,7 @@
     {% endif %}
 
     <section>
-        <table class="col-12">
+        <table class="post-table col-12">
             <tbody>
                 <tr>
                     <th>User</th>
@@ -47,8 +47,11 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% if user.is_authenticated %}
-            <p><a href="{% url 'new_post' thread.id %}" class="btn page-button">New Post</a></p>
-        {% endif %}
+    <br />
+        <p>{% if user.is_authenticated %}<a href="{% url 'new_post' thread.id %}" class="btn page-button">New Post</a>
+            {% endif %}
+        <a href="/forum/" class="btn page-button">Back to Forum</a>
+        </p>
+
     </section>
 {% endblock %}
