@@ -16,7 +16,8 @@
     <script src="{% static 'js/d3.js' %}"></script>
     <script src="{% static 'js/dc.js' %}"></script>
     <script src="{% static 'js/queue.js' %}"></script>
-    <script src="{% static 'js/graph.js' %}"></script>
+    <script src="{% static 'js/progress/bugs_graph.js' %}"></script>
+    <script src="{% static 'js/progress/features_graph.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.css' %}">
     {% block head_js %}{% endblock head_js %}
 </head>
@@ -46,7 +47,14 @@
                             <li><a href="/features/tracker/">Features</a></li>
                         </ul>
                     </li>
-                    <li><a href="/features/progress/">Progress</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Progress<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/bugs/progress/">Bugs</a></li>
+                            <li><a href="/features/progress/">Features</a></li>
+                        </ul>
                     <li><a href="/subscribe/">Subscribe</a></li>
                     <li><a href="/pages/contact/">Contact</a></li>
                     {% if user.is_authenticated %}

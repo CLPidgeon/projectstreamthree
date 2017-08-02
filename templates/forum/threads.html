@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load thread_extras %}
 {% block content %}
-    <section class="row header">
+    <section class="forum-header">
         <h1>{{ subject.name }}</h1>
     </section>
+    <br />
     <section class="col-12">
             <p>{% if user.is_authenticated %}<a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a>
                 {% endif %}

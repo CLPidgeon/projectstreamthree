@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load bootstrap_tags %}
-    <h1>Request A Feature!</h1>
-    <form method="POST">
+    <h1 style="color: aliceblue">Request A Feature!</h1>
+    <form method="POST" class="form-group">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn btn-info">Submit</button>

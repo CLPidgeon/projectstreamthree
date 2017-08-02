@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="page-container">
+    <h2>Fixes</h2>
+    <p>These charts shows the status of all reported bugs and how many I have dealt with.</p>
+    </section>
+    <br />
+
+
+    <section class="row">
+        <article class="col-sm-6 chart-container">
+            <header class="chart-header">
+                Bugs status:
+            </header>
+            <article class="chart-wrapper">
+                <article id="statusChart" class="chart">
+                </article>
+            </article>
+        </article>
+
+        <article class="col-sm-6 chart-container">
+            <header class="chart-header">
+                Bug Yearly Fixes:
+            </header>
+            <article class="chart-wrapper">
+                <article id="yearlyChart" class="chart">
+                </article>
+            </article>
+        </article>
+    </section>
+
+{% endblock %}

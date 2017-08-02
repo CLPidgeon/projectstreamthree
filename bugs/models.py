@@ -29,7 +29,7 @@ class Bug(models.Model):
 class Comments(models.Model):
 
     bug = models.ForeignKey(Bug, related_name='comments')
-    comments = models.CharField(max_length=255, default='')
+    comments = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
 
 

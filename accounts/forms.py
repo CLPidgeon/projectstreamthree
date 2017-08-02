@@ -32,6 +32,14 @@ class UserRegistrationForm(UserCreationForm):
 
         return password2
 
+    def clean_email(self):
+
+        email = self.cleaned_data.get('email')
+
+        if not email:
+            message = "Please enter your email address"
+            raise forms.ValidationError(message)
+
     def save(self, commit=True):
 
         instance = super(UserRegistrationForm, self).save(commit=False)
@@ -57,7 +65,7 @@ class UserSubscriptionForm(forms.ModelForm):
     expiry_month = forms.ChoiceField(label="Month", choices=MONTH_CHOICES)
     expiry_year = forms.ChoiceField(label="Year", choices=YEAR_CHOICES)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
-    password1 = forms.CharField(label='Password', widget= forms.PasswordInput)
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
 
     class Meta:
         model = User

@@ -7,13 +7,13 @@ html {
 }
 
 body {
-    color: white;
+    color: black;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     opacity: 0.7;
     font-family: "Calibri";
-    border: 2px darkred solid;
+    background-color: black;
 }
 
 .page {
@@ -21,24 +21,32 @@ body {
     margin: auto;
 }
 
+.page-container{
+    background-color: aliceblue;
+    border: 2px #B71C1C solid;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
 .navbar-custom{
     background-color: aliceblue;
-    border: 2px darkred solid;
+    border: 2px #B71C1C solid;
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
 .navbar-custom ul li a{
-    color: black;
+    color: #B71C1C;
     font-size: 20px;
 }
 .navbar-custom ul li a:hover{
-    background-color: black;
-    color: white;
+    background-color: #B71C1C;
+    color: #283593;
 }
 
 .icon-bar {
-    background-color: darkred;
+    background-color: #B71C1C;
 }
 
 .banner {
@@ -46,52 +54,39 @@ body {
     padding: 10px;
     background-color: black;
     color: aliceblue;
-    border-bottom: 2px darkred solid;
+    border-bottom: 2px #B71C1C solid;
 }
 
 a {
-    color: darkred;
+    color: #B71C1C;
     font-weight: bold;
 }
 
 a:hover{
-    color: darkblue;
+    color: #283593;
     text-decoration: none;
 }
 
 .page-content {
     padding: 10px 10px 75px 10px;
-    background-color: black;
 }
 
 .page-button{
-    background-color: darkblue;
+    background-color: #283593;
     border: 2px white solid;
     color: white;
-}
-
-.vote-button {
-    background-color: aliceblue;
-    border: 2px darkred solid;
-    color: black;
-    margin-top: 5px;
 }
 
 .staff-button{
-    background-color: darkred;
+    background-color: #B71C1C;
     border: 2px white solid;
     color: white;
-}
-
-.poll-container{
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .footer-content {
     background-color: aliceblue;
     color: black;
-    border: 2px darkred solid;
+    border: 2px #B71C1C solid;
     border-radius: 5px;
     padding: 5px;
 }
@@ -101,21 +96,29 @@ table {
 }
 
 .forum {
-    border-bottom: 2px darkblue solid;
+    border-bottom: 2px #283593 solid;
 }
 
 .subject {
     background-color: aliceblue;
     border-radius: 5px;
-    border: 3px darkblue solid;
+    border: 3px #283593 solid;
     margin-bottom: 5px;
-    color: darkred;
+    color: #B71C1C;
     margin-left: auto;
     margin-right: auto;
 }
 
+.forum-header{
+    color: #283593;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 3px #283593 solid;
+    padding: 10px;
+}
+
 .forum-table th, td{
-    color: darkblue;
+    color: #283593;
     height:30px;
     padding: 10px;
     text-align: center;
@@ -128,14 +131,14 @@ table {
 
 .thread-table th{
     padding: 10px;
-    border: 3px darkred solid;
-    color: darkblue;
+    border: 3px #B71C1C solid;
+    color: #283593;
 }
 
 .thread-table td{
     padding: 10px;
-    border: 3px darkblue solid;
-    color: darkred;
+    border: 3px #283593 solid;
+    color: #B71C1C;
     text-align: left;
 }
 
@@ -147,8 +150,8 @@ table {
 
 .post-table th{
     padding:10px;
-    border: 3px darkred solid;
-    color: darkblue;
+    border: 3px #B71C1C solid;
+    color: #283593;
     background-color: aliceblue;
 }
 
@@ -161,16 +164,62 @@ table {
     background-color: #283593;
 }
 
-.subscribe-table td{
-    color: black;
+.poll-container{
+    border: 3px #283593 solid;
+    color: aliceblue;
+    background-color: #B71C1C;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group{
+    color: aliceblue;
+}
+
+.blog-container {
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 3px #283593 solid;
+    margin: 5px;
+    color: #B71C1C;
+}
+
+.header-container{
+    color: aliceblue;
+}
+
+.tracker-container{
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 3px #283593 solid;
+    margin: 5px;
+    color: #B71C1C;
 }
 
 .vote-badge {
-    background-color: darkblue;
-    color: white;
+    background-color: #283593;
+    color: aliceblue;
     font-size: 20px;
     padding: 5px;
-    border: 2px white solid;
+    border: 2px #B71C1C solid;
+}
+
+.vote-button {
+    background-color: #B71C1C;
+    border: 2px #283593 solid;
+    color: black;
+    margin-top: 5px;
+}
+
+.subscribe-table th {
+    color: aliceblue;
+}
+
+.subscribe-table td{
+    color: black;
+    text-align: left;
 }
 
 .tracker-comments {
@@ -187,7 +236,7 @@ table {
 
 .chart-header {
     text-align: center;
-    border-bottom: 2px darkred solid;
+    border-bottom: 2px #B71C1C solid;
 }
 
 .chart-wrapper {
@@ -199,7 +248,7 @@ table {
 
 .chart-container {
     border-radius: 10px;
-    border: 2px darkred solid;
+    border: 2px #B71C1C solid;
     background-color: aliceblue;
     color: black;
     opacity: 1;
@@ -219,7 +268,7 @@ legend {
             }
 
             .icon-bar {
-                background-color: darkred;
+                background-color: #B71C1C;
             }
 
             .navbar-header {

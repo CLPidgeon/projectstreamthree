@@ -13,8 +13,6 @@
 {% endblock %}
 
 {% block content %}
-    <p>Card payment page</p>
-
     <form role="form" method="post" id="subscribe-form" action="{% url 'subscribe' %}">
     <div id="credit-card-errors" style="display:none">
       <div class="alert-message block-message error" id="stripe-error-message"></div>

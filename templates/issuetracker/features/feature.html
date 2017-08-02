@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+    <section class="tracker-container">
     <h1>Feature: {{ feature.title }}</h1>
     <p>Idea: {{ feature.description }}</p>
         {% if user.is_authenticated %}
         <p><a href="{% url 'feature_comment' feature.id %}" class="btn page-button">New Comment</a></p>
     {% endif %}
+    </section>
+
+    <hr>
+
     <article>
         {% for comments in feature.comments.all %}
             {% include 'issuetracker/features/comments.html' %}

@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^progress/feature', progress_views.featuredata),
     url(r'^progress/bug', progress_views.bugdata),
     url(r'^features/progress', progress_views.features_charts),
+    url(r'^bugs/progress', progress_views.bugs_charts),
 
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),

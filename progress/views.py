@@ -34,7 +34,7 @@ def featuredata(request):
 
 def bugdata(request):
 
-    bug_status = Feature.objects.all()
+    bug_status = Bug.objects.all()
 
     bugs_data = []
 
@@ -54,6 +54,10 @@ def bugdata(request):
     return HttpResponse(bug_dataset, content_type='text/plain')
 
 
+def bugs_charts(request):
+    return render(request, 'progress/bug_charts.html')
+
+
 def features_charts(request):
 
-    return render(request, 'charts.html')
+    return render(request, 'progress/features_charts.html')

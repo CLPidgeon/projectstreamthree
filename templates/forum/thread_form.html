@@ -11,6 +11,7 @@
 {% block content %}
     <section>
         <section class="col-12">
+        <a href="/forum/" class="btn page-button">Back to Forum</a>
             <form method="post" action="{% url 'new_thread' subject.id %}">
                 {% csrf_token %}
                 <article class="form-group">

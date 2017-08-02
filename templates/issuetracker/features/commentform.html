@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-    <h2>{{ feature.title }}</h2>
-    <p>{{ feature.description }}</p>
-    <hr>
     <form method="post" action="{{ form_action }}">
         {% csrf_token %}
         {{ form | as_bootstrap }}

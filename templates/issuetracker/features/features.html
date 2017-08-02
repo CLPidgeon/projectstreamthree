@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <section class="container">
+    <section class="tracker-container">
         <div class="col-12">
             <h1>Feature Suggestions</h1>
-            <p>You must be logged in to request a feature.</p>
             {% if user.is_authenticated %}
             <p><button class="btn page-button" onclick="location.href='{% url 'new_feature' %}'">Request a feature!</button></p>
+                {% else %}
+                <p>You must be logged in to request a feature.</p>
             {% endif %}
         </div>
         <table class="table">

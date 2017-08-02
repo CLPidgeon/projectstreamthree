@@ -1,0 +1,242 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$OuUZvE6V2QNy$eC9cakVoqeqf40jogMdn84V0rpf9A8bQRLSPmPMt9uU=",
+        "last_login": "2017-07-25T13:34:59.275Z",
+        "is_superuser": true,
+        "username": "clp@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "clp@pidge.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-06-20T11:25:40.111Z",
+        "stripe_id": "",
+        "subscription_end": "2017-06-20T11:25:40.111Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$c4IU5yqs0x5c$IUR9U9DxylaTRmx2yJ5J/V4/8i3xjerEFAE+QqAGNkw=",
+        "last_login": "2017-07-20T15:30:40.740Z",
+        "is_superuser": false,
+        "username": "clp@clpidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "clp@clpidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-06-20T11:35:04.789Z",
+        "stripe_id": "cus_B3oEnw3YdMXq4z",
+        "subscription_end": "2017-08-17T15:31:05.198Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$MnCGwI28s5mJ$wssR7XuqnTDdaZ2WIsRviq2C9W7u/HeFiwXZ4YIfcHw=",
+        "last_login": "2017-07-17T11:34:29.594Z",
+        "is_superuser": false,
+        "username": "cp@clpidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "cp@clpidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-06-20T11:37:11.604Z",
+        "stripe_id": "cus_AsVgYX8AEitlfY",
+        "subscription_end": "2017-07-18T11:37:13.022Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$4oKgsRDHbxUW$+X3G7/0xVWKD0Klextutkje/+60VoI1Uc38Xi/RopWk=",
+        "last_login": "2017-07-20T11:18:29.938Z",
+        "is_superuser": false,
+        "username": "clare@clpidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "clare@clpidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-17T11:35:10.246Z",
+        "stripe_id": "cus_B2ckgn1jrptOYm",
+        "subscription_end": "2017-08-14T11:35:12.901Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$9nlcnGJiqoiI$yMNiQ8kiJTE8s8UXqm+E7X2XtbZsPKSF9Z+dLoOsuPk=",
+        "last_login": "2017-07-21T09:47:26.275Z",
+        "is_superuser": false,
+        "username": "clarepidge@clpidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "clarepidge@clpidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T11:16:40.536Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-20T11:16:40.536Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$g6Jy47ifH8Yv$9o1yRdU0S99sm4tkTvXxN8Aiuw55HGoZ4qOP7m58s6U=",
+        "last_login": "2017-07-25T12:54:31.047Z",
+        "is_superuser": false,
+        "username": "jude@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "jude@pidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T11:27:09.557Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-20T11:27:09.557Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$Hq0dON9JelQ8$Wk4zsf0JlNKoyo4tHJf/9/aWgWistCKLi2XLRjhUUjc=",
+        "last_login": "2017-07-20T14:53:17.156Z",
+        "is_superuser": false,
+        "username": "will@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "will@pidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T14:21:30.340Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-20T14:21:30.340Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$RsyPXBeBInKE$1uRwATYljdeUcZH1btfrUHN9skEtd6R0TISQdl+7NLk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "None",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T14:51:06.426Z",
+        "stripe_id": "cus_B3naTGrIa81uAD",
+        "subscription_end": "2017-08-17T14:51:09.144Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 9,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T14:53:37.855Z",
+        "stripe_id": "cus_B3ndN5JWgQzuqb",
+        "subscription_end": "2017-08-17T14:53:39.267Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$WOjANI21Kn8h$E35irfS50oDhUJN6qJUTfdhK5wPd5JiVLG26+YePsqU=",
+        "last_login": "2017-07-21T10:18:26.974Z",
+        "is_superuser": false,
+        "username": "jon@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "jon@pidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-20T15:34:50.595Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-20T15:34:50.595Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$tHJfFG37KvCr$7RyX8nUYPP+Ru5XycEKnexvxNNdHCCi6LdqKiZl0jJM=",
+        "last_login": "2017-07-21T10:02:20.840Z",
+        "is_superuser": false,
+        "username": "jcp@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "jcp@pidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-21T10:02:20.146Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-21T10:02:20.146Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$fI9VvnA5Y6FC$/djK9XzU+IIzp57le1JlqihHuLIiE4F5th81yL57PkQ=",
+        "last_login": "2017-07-21T10:48:22.060Z",
+        "is_superuser": false,
+        "username": "wdp@pidge.com",
+        "first_name": "",
+        "last_name": "",
+        "email": "wdp@pidge.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-21T10:48:21.675Z",
+        "stripe_id": "",
+        "subscription_end": "2017-07-21T10:48:21.675Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

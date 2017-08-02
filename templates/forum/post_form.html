@@ -12,6 +12,7 @@
 {% block content %}
     <section>
         <article class="col-12">
+            <a href="/forum/" class="btn page-button">Back to Forum</a>
             <form method="post" action="{{ form_action }}">
                 {% csrf_token %}
                 {{ form | as_bootstrap }}
