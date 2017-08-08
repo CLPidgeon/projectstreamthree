@@ -4,11 +4,12 @@ queue()
 
 function makeGraphs(error, bugJson) {
     var BugData = bugJson;
-    var dateFormat = d3.time.format("%Y-%m-%d");
+    var dateFormat = d3.time.format("%a %b %d %H:%M:%S +0000 %Y");
 
     BugData.forEach(function(d){
-        d["updated"] = dateFormat.parse(String(d["updated"]));
+        d["updated"] = dateFormat.parse(d["updated"]);
         d["status"] = d["status"];
+        console.log(d["updated"]);
     });
 
     // creating Crossfilter instance
@@ -30,6 +31,9 @@ function makeGraphs(error, bugJson) {
     // calculating dates
     var minDate = dateDim.bottom(1)[0]["updated"];
     var maxDate = dateDim.top(1)[0]["updated"];
+
+    console.log(minDate);
+    console.log(maxDate);
 
     // defining the charts
     var yearlyChart = dc.barChart("#yearlyChart");
@@ -53,10 +57,6 @@ function makeGraphs(error, bugJson) {
         .dimension(statusDim)
         .group(numbyStatus)
         .xAxis().ticks(4);
-
-
-    console.log(minDate);
-    console.log(maxDate);
 
     dc.renderAll();
 }
