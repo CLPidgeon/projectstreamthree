@@ -8,14 +8,15 @@
 
         <p>You joined on {{ user.date_joined }}</p>
 
-        {% if user.is_subscribed %}
+
         <p>Your stripe id is {{ user.stripe_id }}</p>
 
         <h2>Subscription Details:</h2>
 
         <p>You have {{ user.subscription_end|timeuntil }} left on your subscription</p>
 
-        <p>To cancel your subscription click 'Cancel Subscription' below</p>
+        <p>To cancel your subscription click 'Cancel Subscription' below. You will remain subscribed until the end of
+        your current subscription period.</p>
 
         <p>
             <a href="{% url 'cancel_subscription' %}"
@@ -30,7 +31,7 @@
         return false;
         }
         </script>
-    {% endif %}
+
 
 
     </section>

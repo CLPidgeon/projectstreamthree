@@ -4,12 +4,11 @@ queue()
 
 function makeGraphs(error, bugJson) {
     var BugData = bugJson;
-    var dateFormat = d3.time.format("%a %b %d %H:%M:%S +0000 %Y");
+    var dateFormat = d3.time.format("%Y-%m-%d");
 
     BugData.forEach(function(d){
         d["updated"] = dateFormat.parse(d["updated"]);
         d["status"] = d["status"];
-        console.log(d["updated"]);
     });
 
     // creating Crossfilter instance

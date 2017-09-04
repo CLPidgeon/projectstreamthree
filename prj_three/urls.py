@@ -19,9 +19,6 @@ from django.views.static import serve
 from .settings import MEDIA_ROOT
 from home import views
 from accounts import views as accounts_views
-from paypal.standard.ipn import urls as paypal_urls
-from paypal_store import views as paypal_views
-from magazines import views as magazine_views
 from threads import views as forum_views
 from progress import views as progress_views
 
@@ -60,15 +57,9 @@ urlpatterns = [
     url(r'^logout/$', accounts_views.logout, name='logout'),
 
     # Stripe
-    url(r'stripe', accounts_views.subscribe, name='subscribe'),
+    url(r'subscribe', accounts_views.subscribe, name='subscribe'),
     url(r'^cancel_subscription/$', accounts_views.cancel_subscription, name='cancel_subscription'),
     url(r'^subscriptions_webhook/$', accounts_views.subscriptions_webhook, name='subscriptions_webhook'),
-
-    # Paypal
-    url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
-    url(r'^paypal-return', paypal_views.paypal_return),
-    url(r'^paypal-cancel', paypal_views.paypal_cancel),
-    url(r'^subscribe/$', magazine_views.all_magazines),
 
     # Issue Tracker
     url(r'bugs/', include('bugs.urls')),

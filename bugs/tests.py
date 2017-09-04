@@ -3,7 +3,9 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 from bugs.views import bug_tracker, new_bug, bug, bug_comment, bug_vote
+from bugs.models import Bug
 from django.core.urlresolvers import resolve
+from django.shortcuts import render_to_response
 
 
 # Create your tests here.

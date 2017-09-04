@@ -5,6 +5,7 @@ queue()
 function makeGraphs(error, featureJson) {
     var FeatureData = featureJson;
     var dateFormat = d3.time.format("%Y-%m-%d");
+
     FeatureData.forEach(function(d) {
         d["updated"] = dateFormat.parse(String(d["updated"]));
         d["status"] = d["status"];
@@ -30,6 +31,9 @@ function makeGraphs(error, featureJson) {
     var minDate = dateDim.bottom(1)[0]["updated"];
     var maxDate = dateDim.top(1)[0]["updated"];
 
+    console.log(minDate);
+    console.log(maxDate);
+
     // defining the charts
     var yearlyChart = dc.barChart("#yearlyChart");
     var statusChart = dc.rowChart("#statusChart");
@@ -52,9 +56,6 @@ function makeGraphs(error, featureJson) {
         .dimension(statusDim)
         .group(numbyStatus)
         .xAxis().ticks(4);
-
-    console.log(minDate);
-    console.log(maxDate);
 
     dc.renderAll();
 }
