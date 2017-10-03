@@ -36,6 +36,15 @@
                 <ul id="myCollapsingList" class="nav nav-justified collapse navbar-collapse">
                     <li><a href="/">Home</a></li>
                     <li><a href="/pages/about/">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            Leagues<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/EIHL">EIHL</a></li>
+                            <li><a href="/GB">Team GB</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/forum/">Forum</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li class="dropdown">
@@ -61,7 +70,7 @@
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
                     {% else %}
-                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
                 </ul>

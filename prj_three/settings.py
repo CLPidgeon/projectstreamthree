@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'bugs',
     'features',
     'progress',
+    'leagues',
 ]
 
 INTERNAL_IPS = ('127.0.0.1',)

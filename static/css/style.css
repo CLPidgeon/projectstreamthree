@@ -25,7 +25,7 @@ body {
     background-color: aliceblue;
     border: 2px #B71C1C solid;
     border-radius: 5px;
-    width: 100%;
+    padding: 10px;
 
 }
 
@@ -38,7 +38,7 @@ body {
 
 .navbar-custom ul li a{
     color: #B71C1C;
-    font-size: 20px;
+    font-size: 18px;
 }
 .navbar-custom ul li a:hover{
     background-color: #B71C1C;
@@ -51,7 +51,7 @@ body {
 
 .banner {
     margin-top:40px;
-    padding: 10px;
+    padding-top: 30px;
     background-color: black;
     color: aliceblue;
     border-bottom: 2px #B71C1C solid;

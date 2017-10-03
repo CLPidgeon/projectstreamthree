@@ -21,6 +21,7 @@ from home import views
 from accounts import views as accounts_views
 from threads import views as forum_views
 from progress import views as progress_views
+from leagues import views as league_views
 
 
 urlpatterns = [
@@ -65,6 +66,10 @@ urlpatterns = [
     url(r'bugs/', include('bugs.urls')),
     url(r'features/', include('features.urls')),
 
+    # League Pages
+    url(r'^EIHL/$', league_views.eihl, name='eihl'),
+    url(r'^GB/$', league_views.GB, name="GB"),
+
 ]
 
 
@@ -75,6 +80,7 @@ if settings.DEBUG:
 
     import debug_toolbar
 
-    urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
+urlpatterns += [
+    url(r'^__debug__/', include(debug_toolbar.urls)),
+]
+
