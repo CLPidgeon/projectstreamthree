@@ -68,7 +68,7 @@ a:hover{
 }
 
 .page-content {
-    padding: 10px 10px 75px 10px;
+    padding: 10px 10px 100px 10px;
 }
 
 .page-button{
@@ -89,7 +89,19 @@ a:hover{
     border: 2px #B71C1C solid;
     border-radius: 5px;
     padding: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+#accordionRules ol {
+    text-align: left;
+}
+
+#accordionRules ul{
+    text-align: left;
+}
+
+#accordionRules p {
+    text-align: left;
 }
 
 table {
@@ -157,12 +169,16 @@ table {
 }
 
 .post-table td{
-    border: 3px aliceblue solid;
+    border: 3px black solid;
     color: aliceblue;
 }
 
 .post-table tr:nth-child(even){
     background-color: #283593;
+}
+
+.league-tableContainer {
+    padding-bottom: 100px;
 }
 
 .poll-container{

@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <section class="page-container">
+
+        <div class="col-12">
+
+            <h1>EIHL Fantasy Ice Hockey</h1>
+
+            <p>The only Elite Ice Hockey fantasy league! Click the panel below to have a read of the rules then have a look
+            at a sample team. You must register as a user to create a team and enter the league.</p>
+
+        </div>
+
+        <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordionRules">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordionRules" href="#collapseRules">Rules</a>
+                    </h4>
+
+                </div>
+
+                <div id="collapseRules" class="panel-collapse collapse">
+
+                    <div class="panel-body">
+
+                        <h2>Fantasy Ice Hockey Rules</h2>
+
+                        <p>Team Set Up:</p>
+                        <ol>
+                            <li>Teams - You may have up to 3 players from each team.</li>
+                            <li>Netminders - You must choose 2 netminders - 1 British netminder and 1 Import netminder.</li>
+                            <li>Defence - You must choose 6 defencemen - 2 British defencemen and 4 Import defencemen.</li>
+                            <li>Forwards - You must choose 9 forwards - 3 British forwards and 6 Import forwards.</li>
+                        </ol>
+
+                        <h2>Earning points</h2>
+                        <article class="row">
+                        <article class="col-sm-4">
+                            <p>Netminders:</p>
+                            <ul>
+                                <li>Shutout - 5 points</li>
+                                <li>Saves - 1 point every 10 saves</li>
+                                <li>Assist - 3 points</li>
+                                <li>Goal - 20 points</li>
+                            </ul>
+                        </article>
+
+                        <article class="col-sm-4">
+                            <p>Defence</p>
+                            <ul>
+                                <li>Clean sheet - 3 points</li>
+                                <li>Assist - 3 points</li>
+                                <li>Goal - 5 points</li>
+                            </ul>
+                        </article>
+
+                        <article class="col-sm-4">
+                            <p>Forwards</p>
+                            <ul>
+                                <li>Assist - 2 points</li>
+                                <li>Goal - 3 points</li>
+                            </ul>
+                        </article>
+
+                    </article>
+
+                        <hr>
+
+                        <article class="row col-12">
+                            <h2>Losing points</h2>
+                            <p>All players lose the following points per penalty taken</p>
+                            <ul>
+                                <li>Minor penalty - 1 point</li>
+                                <li>Major penalty - 2 points</li>
+                                <li>Game penalty - 5 points</li>
+                                <li>Match penalty - 10 points</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordion">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseExample">Example Team</a>
+                    </h4>
+
+                </div>
+
+                <div id="collapseExample" class="panel-collapse collapse">
+
+                    <div class="panel-body">
+
+                        <h2>Example Fantasy Ice Hockey Team</h2>
+
+                        <p>Supreme Team!</p>
+
+                        <p>Netminders:</p>
+
+                        <article class="row">
+
+                            <article class="col-sm-6">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/mgarnett.jpg" alt="Michael Garnett" height="150px" width="150px">
+                                    <figcaption>Garnett(NM), Nottingham Panthers. <a href="http://www.eliteprospects.com/player.php?player=8559">Stats</a>
+                                    © Getty Images</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-6">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/bbowns.jpg" alt="Ben Bowns" height="150px" width="150px">
+                                    <figcaption>Bowns(NM), Cardiff Devils <a href="http://www.eliteprospects.com/player.php?player=38637">Stats</a>
+                                    © Cardiff Devils</figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                        <hr>
+
+                        <p>Defence:</p>
+
+                        <article class="row">
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/swindlehurst.jpg" alt="Paul Swindlehurst" height="150px" width="150px">
+                                    <figcaption>Swindlehurst(D), Manchester Storm. <a href="http://www.eliteprospects.com/player.php?player=64638">Stats</a>
+                                    © Manchester Storm</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/boconnor.jpg" alt="Ben O'Connor" height="150px" width="150px">
+                                    <figcaption>O'Connor(D), Sheffield Steelers <a href="http://www.eliteprospects.com/player.php?player=20906">Stats</a>
+                                        © <a href="https://twitter.com/woolster80">Dean Woolley</a></figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/pphillips.jpg" alt="Paul Phillips" height="150px" width="150px">
+                                    <figcaption>Phillips(D), MK Lightning <a href="http://www.eliteprospects.com/player.php?player=37788">Stats</a>
+                                    © Manchester Storm</figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                        <article class="row">
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/ackered.jpg" alt="Carl Ackered" height="150px" width="150px">
+                                    <figcaption>Ackered(D), Guildford Flames <a href="http://www.eliteprospects.com/player.php?player=7968">Stats</a>
+                                    © Steffan Fransson</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/goulakos.jpg" alt="Spiro Goulakos" height="150px" width="150px">
+                                    <figcaption>Goulakos(D), Belfast Giants <a href="http://www.eliteprospects.com/player.php?player=64592">Stats</a>
+                                    © Dan Hickling</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/stadel.jpg" alt="Riley Stadel" height="150px" width="150px">
+                                    <figcaption>Stadel(D), Dundee Stars <a href="http://www.eliteprospects.com/player.php?player=120211">Stats</a>
+                                    © Dan Hickling</figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                        <hr>
+
+                        <p>Forwards:</p>
+
+                        <article class="row">
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/farmer.jpg" alt="Robert Farmer" height="150px" width="150px">
+                                    <figcaption>Farmer(F), Nottingham Panthers. <a href="http://www.eliteprospects.com/player.php?player=37293">Stats</a>
+                                        © <a href="http://www.panthersimages.co.uk">Karl Denham</a></figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/dowd.jpg" alt="Robert Dowd" height="150px" width="150px">
+                                    <figcaption>Dowd(F), Sheffield Steelers <a href="http://www.eliteprospects.com/player.php?player=20955">Stats</a>
+                                        © <a href="https://twitter.com/woolster80">Dean Woolley</a></figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/ferrara.jpg" alt="Luke Ferrara" height="150px" width="150px">
+                                    <figcaption>Ferrara(F), Coventry Blaze. <a href="http://www.eliteprospects.com/player.php?player=54005">Stats</a>
+                                        © <a href="https://twitter.com/woolster80">Dean Woolley</a></figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                        <article class="row">
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/dunbar.jpg" alt="John Dunbar" height="150px" width="150px">
+                                    <figcaption>Dunbar(F), Guildford Flames. <a href="http://www.eliteprospects.com/player.php?player=24015">Stats</a>
+                                    © John Malkowski</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/pitt.jpg" alt="Scott Pitt" height="150px" width="150px">
+                                    <figcaption>Pitt(F), Manchester Storm <a href="http://www.eliteprospects.com/player.php?player=31227">Stats</a>
+                                    © Braehead Clan</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/beca.jpg" alt="Matt Beca" height="150px" width="150px">
+                                    <figcaption>Beca(F), Manchester Storm <a href="http://www.eliteprospects.com/player.php?player=17834">Stats</a>
+                                    © Braehead Clan</figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                        <article class="row">
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/armstrong.jpg" alt="John Armstrong" height="150px" width="150px">
+                                    <figcaption>Armstrong(F), Sheffield Steelers<a href="http://www.eliteprospects.com/player.php?player=12271">Stats</a>
+                                        © <a href="https://twitter.com/woolster80">Dean Woolley</a></figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/mokshantsev.jpg" alt="Alexander Mokshantsev" height="150px" width="150px">
+                                    <figcaption>Mokshantsev(F), Nottingham Panthers <a href="http://www.eliteprospects.com/player.php?player=173423">Stats</a>
+                                    © Dmitry Artemov</figcaption>
+                                </figure>
+                            </article>
+
+                            <article class="col-sm-4">
+                                <figure>
+                                    <img src="../media/img/fantasyIH/pietrus.jpg" alt="Jordan Pietrus" height="150px" width="150px">
+                                    <figcaption>Pietrus(F), Coventry Blaze <a href="http://www.eliteprospects.com/player.php?player=39058">Stats</a>
+                                        © <a href="http://www.scottwiggins.co.uk">Scott Wiggins</a></figcaption>
+                                </figure>
+                            </article>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <h1>Prizes</h1>
+            <p>There are cash prizes for the top 3 players, the amount varies depending upon how many people enter. </p>
+            <p>The confirmed amount will be announced once new entries have been closed.</p>
+
+        </div>
+
+    </section>
+
+{% endblock %}

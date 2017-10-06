@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="col-lg-9 page-container">
 
-        <h3>The Elite Ice Hockey League</h3>
-        <p>Welcome to our page about the UK Elite Ice Hockey League</p>
-        <h2>EIHL League Standings</h2>
+    <section class="col-lg-9">
+
+        <div class="page-container">
+
+            <h3>The Elite Ice Hockey League</h3>
+            <p>Welcome to our page about the UK Elite Ice Hockey League, here you will find the latest EIHL standings.</p>
+
+        </div>
 
         <br />
 
-            <table>
+        <div class="league-tableContainer">
+
+            <table class="post-table">
 
                 <tr>
                     <th>Team</th>
@@ -193,8 +199,9 @@
                 </tr>
 
             </table>
+        </div>
 
-    </div>
+    </section>
 
     <div class="col-sm-3 page-container">
     <p>Official EIHL Twitter Feed</p>

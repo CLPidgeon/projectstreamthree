@@ -4,10 +4,9 @@ queue()
 
 function makeGraphs(error, featureJson) {
     var FeatureData = featureJson;
-    var dateFormat = d3.time.format("%Y-%m-%d");
 
     FeatureData.forEach(function(d) {
-        d["updated"] = dateFormat.parse(String(d["updated"]));
+        d["updated"] = new Date(d["updated"]);
         d["status"] = d["status"];
     });
 
@@ -23,9 +22,10 @@ function makeGraphs(error, featureJson) {
     });
 
     // grouping data
-
     var numbyDate = dateDim.group();
     var numbyStatus = statusDim.group();
+
+    console.log(numbyDate);
 
     // calculating dates
     var minDate = dateDim.bottom(1)[0]["updated"];
@@ -35,7 +35,7 @@ function makeGraphs(error, featureJson) {
     console.log(maxDate);
 
     // defining the charts
-    var yearlyChart = dc.barChart("#yearlyChart");
+    var yearlyChart = dc.rowChart("#yearlyChart");
     var statusChart = dc.rowChart("#statusChart");
 
     // creating the charts
@@ -44,11 +44,7 @@ function makeGraphs(error, featureJson) {
         .height(200)
         .dimension(dateDim)
         .group(numbyDate)
-        .x(d3.time.scale().domain([minDate, maxDate]))
-        .elasticY(true)
-        .brushOn(false)
-        .xAxisLabel("Year")
-        .yAxis().ticks(4);
+        .xAxis().ticks(4);
 
     statusChart
         .width(300)

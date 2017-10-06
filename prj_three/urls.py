@@ -37,6 +37,9 @@ urlpatterns = [
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
 
+    # Fantasy Ice Hockey
+    url(r'^fantasy', views.fantasy, name='fantasy'),
+
     # Blog
     url(r'', include('blog.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
