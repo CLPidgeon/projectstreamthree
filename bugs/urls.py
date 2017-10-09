@@ -12,6 +12,6 @@ urlpatterns = [
     url(r'tracker/$', views.bug_tracker, name='bug_tracker'),
     url(r'new', views.new_bug, name='new_bug'),
     url(r'vote/(?P<bug_id>[0-9]+)/$', views.bug_vote, name='bug_vote'),
-    url(r'(?P<bug_id>[0-9]+)/$', views.bug, name='bug'),
+    url(r'(?P<bug_id>[0-9]+)/$', views.bug_detail, name='bug'),
     url(r'(?P<bug_id>[0-9]+)/comment/$', views.bug_comment, name='bug_comment'),
 ]

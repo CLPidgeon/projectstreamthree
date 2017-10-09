@@ -35,7 +35,6 @@ def register(request):
                 messages.error(request, "We were unable to log you in at this time")
 
     else:
-        today = datetime.date.today()
         form = UserRegistrationForm()
 
     args = {'form': form}
@@ -70,7 +69,6 @@ def subscribe(request):
             except stripe.error.CardError, e:
                 messages.error(request, "Your card was declined!")
     else:
-        today = datetime.date.today()
         form = UserSubscriptionForm()
 
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}
@@ -118,7 +116,7 @@ def profile(request):
 
 
 def login(request):
-
+    "Log in form"
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():

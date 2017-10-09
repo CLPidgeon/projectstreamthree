@@ -77,8 +77,8 @@ def new_bug(request):
         form = BugForm(request.POST, request.FILES)
         if form.is_valid():
 
-            bug = form.save(commit=False)
-            bug.save()
+            bug_new = form.save(commit=False)
+            bug_new.save()
             return redirect(bug_tracker)
     else:
         form = BugForm()
@@ -94,7 +94,7 @@ def bug_tracker(request):
     return render(request, 'issuetracker/bugs/bugs.html', {"bugs": bugs})
 
 
-def bug(request, bug_id):
+def bug_detail(request, bug_id):
 
     bug_ = get_object_or_404(Bug, pk=bug_id)
     args = {'bug': bug_}

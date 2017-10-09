@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, UserManager
 
 
-# Create your models here.
+# Copied from Code Institute Lesson.
 class AccountUserManager(UserManager):
 
     def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):

@@ -22,22 +22,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'it4nl$4bj*!8%5a+fb=-3mb#*qoaepqd7#ungipoc=@zrp$qqk'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-
 SITE_ID = 2
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.EmailAuth',
+)
 
-# Stripe environment variables
-STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_jdJD1T7I9smh6Qem2d7eJIXP')
-STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_vfYulusugV6nOunj56tb5ELk')
-
-# Disqus
-DISQUS_WEBSITE_SHORTNAME = 'icehockeysite'
+LOGIN_URL = '/login/'
 
 # Application definition
 
@@ -57,7 +52,6 @@ INSTALLED_APPS = [
     'disqus',
     'threads',
     'polls',
-    'debug_toolbar',
     'tinymce',
     'emoticons',
     'rest_framework',
@@ -66,8 +60,6 @@ INSTALLED_APPS = [
     'progress',
     'leagues',
 ]
-
-INTERNAL_IPS = ('127.0.0.1',)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -101,18 +93,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'prj_three.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -158,10 +138,5 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.EmailAuth',
-)
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, 'static', 'js', 'tinymce', 'tinymce.min.js')

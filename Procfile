@@ -1,0 +1,1 @@
+web: gunicorn prj_three.wsgi:application

@@ -33,7 +33,7 @@ class Comments(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 
-class Vote( models.Model):
+class Vote(models.Model):
 
     feature = models.ForeignKey(Feature, related_name='feature_votes')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='feature_votes')
