@@ -20,3 +20,4 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_vfYulusugV6nOunj56tb5ELk')
 
 
 MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+

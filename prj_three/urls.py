@@ -22,7 +22,7 @@ from accounts import views as accounts_views
 from threads import views as forum_views
 from progress import views as progress_views
 from leagues import views as league_views
-
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -75,15 +75,11 @@ urlpatterns = [
 
 ]
 
-
-from django.conf import settings
-from django.conf.urls import include, url
-
 if settings.DEBUG:
 
     import debug_toolbar
 
-urlpatterns += [
-    url(r'^__debug__/', include(debug_toolbar.urls)),
-]
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
 
