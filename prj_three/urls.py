@@ -20,19 +20,12 @@ from settings.dev import MEDIA_ROOT
 from home import views
 from accounts import views as accounts_views
 from threads import views as forum_views
-from progress import views as progress_views
 from leagues import views as league_views
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index, name='index'),
-
-    # Charts
-    url(r'^progress/feature', progress_views.featuredata),
-    url(r'^progress/bug', progress_views.bugdata),
-    url(r'^features/progress', progress_views.features_charts),
-    url(r'^bugs/progress', progress_views.bugs_charts),
 
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),

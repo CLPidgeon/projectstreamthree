@@ -18,6 +18,24 @@
       <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
 
+    <div class="page-container">
+        <h2>Normal Users</h2>
+        <ul>
+            <li>One free entry into the Fantasy Ice Hockey League</li>
+            <li>Full access to the forum</li>
+            <li>Report a bug</li>
+            <li>Upvote on bugs you have found that have previously been reported</li>
+            <li>Suggest a new feature</li>
+        </ul>
+        <h2>Subscriber Perks</h2>
+        <p>Subscriptions are at a set price of £9.99 a month. </p>
+        <ul>
+            <li>Two addiontial entries into the Fantasy Ice Hockey League</li>
+            <li>One roster transfer WEEKLY</li>
+            <li>Upvote on features you would like to see implemented</li>
+        </ul>
+    </div>
+
     <legend>Subscribe</legend>
     {% csrf_token %}
     {{ form|as_bootstrap }}
