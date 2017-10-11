@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad961911-7ae1-41b2-983f-5d97f46e84fe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0002_bug_votes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0003_auto_20170626_1223.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0004_comment.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0005_auto_20170627_1603.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0006_auto_20170629_0950.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0007_auto_20170629_1133.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0008_remove_bug_votes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0009_bug_votes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0010_comments.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0011_auto_20170705_1123.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0012_auto_20170707_1215.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0013_auto_20170707_1217.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0014_auto_20170707_1219.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/0015_auto_20170725_1421.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/serializers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/templatetags/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/templatetags/bug_extras.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bugs/views.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/forms.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0002_auto_20170626_1225.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0003_feature_votes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0004_feature_comments.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0005_auto_20170703_1544.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0006_vote.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0007_remove_feature_votes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/0008_auto_20170725_1422.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/serializers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/templatetags/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/templatetags/feature_extras.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/features/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings/base.py" afterPath="$PROJECT_DIR$/settings/base.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,12 +25,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="all_issues.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/issuetracker/all_issues.html">
+      <file leaf-file-name="staging.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements/staging.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+            <state relative-caret-position="44">
+              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staging.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings/staging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,8 +69,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/issuetracker/bugs.html" />
-        <option value="$PROJECT_DIR$/templates/issuetracker/features.html" />
         <option value="$PROJECT_DIR$/blog/admin.py" />
         <option value="$PROJECT_DIR$/blog/apps.py" />
         <option value="$PROJECT_DIR$/blog/forms.py" />
@@ -142,7 +107,6 @@
         <option value="$PROJECT_DIR$/templates/issuetracker/bugs/bug_vote.html" />
         <option value="$PROJECT_DIR$/templates/fantasyIH.html" />
         <option value="$PROJECT_DIR$/prj_three/urls.py" />
-        <option value="$PROJECT_DIR$/settings/base.py" />
         <option value="$PROJECT_DIR$/issuetracker/admin.py" />
         <option value="$PROJECT_DIR$/issuetracker/forms.py" />
         <option value="$PROJECT_DIR$/issuetracker/models.py" />
@@ -153,6 +117,9 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/issuetracker/all_issues.html" />
+        <option value="$PROJECT_DIR$/requirements/staging.txt" />
+        <option value="$PROJECT_DIR$/settings/base.py" />
+        <option value="$PROJECT_DIR$/settings/staging.py" />
       </list>
     </option>
   </component>
@@ -555,7 +522,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -565,8 +532,8 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27406567" sideWeight="0.4935553" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23147154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.4935553" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20891514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -615,26 +582,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/polls/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/polls/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polls/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -921,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prj_three/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1041,9 +980,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/issuetracker/all_issues.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="102" column="24" lean-forward="false" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+        <state relative-caret-position="382">
+          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements/staging.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3080">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/staging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
