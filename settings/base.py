@@ -55,8 +55,6 @@ INSTALLED_APPS = [
     'tinymce',
     'emoticons',
     'rest_framework',
-    'bugs',
-    'features',
     'leagues',
     'issuetracker',
 ]
