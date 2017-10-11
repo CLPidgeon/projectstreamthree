@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="tracker-container">
+    <h1>Issue: {{ issue.title }}</h1>
+    <p>Problem: {{ issue.description }}</p>
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'issue_comment' issue.id %}" class="btn page-button">Add Comment</a></p>
+    {% endif %}
+    </section>
+    <hr>
+    <article>
+        {% for comments in issue.comments.all %}
+            {% include 'issuetracker/issuecomments.html' %}
+        {% endfor %}
+    </article>
+{% endblock %}

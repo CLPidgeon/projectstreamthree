@@ -1,21 +1,17 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import BlogPostForm
 
 
-# Create your views here.
+# Code taken from Code Institute Lesson
 def post_list(request):
-
     posts = Post.objects.filter(published_date__lt=timezone.now()).order_by('-published_date')
     return render(request, 'blogposts.html', {'posts': posts})
 
 
 def post_detail(request, id):
-
     post = get_object_or_404(Post, pk=id)
     post.views += 1
     post.save()
@@ -23,7 +19,6 @@ def post_detail(request, id):
 
 
 def new_post(request):
-
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -37,7 +32,6 @@ def new_post(request):
 
 
 def edit_post(request, id):
-
     post = get_object_or_404(Post, pk=id)
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES, instance=post)

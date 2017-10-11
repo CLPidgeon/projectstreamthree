@@ -2,7 +2,7 @@ from models import User
 
 
 class EmailAuth(object):
-    """Check User password"""
+    "Authenticating users using email"
     def authenticate(self, email=None, password=None):
         try:
             user = User.objects.get(email=email)
@@ -11,8 +11,8 @@ class EmailAuth(object):
         except User.DoesNotExist:
             return None
 
-    """Checks User is active"""
     def get_user(self, user_id):
+        "Checking user is active"
         try:
             user = User.objects.get(pk=user_id)
             if user.is_active:
