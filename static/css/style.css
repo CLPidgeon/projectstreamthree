@@ -24,7 +24,7 @@ body {
     background-color: aliceblue;
     border: 2px #B71C1C solid;
     border-radius: 5px;
-    padding: 20px 10px;
+    padding: 20px 10px 50px 10px;
     margin: auto;
     opacity: 1;
 }

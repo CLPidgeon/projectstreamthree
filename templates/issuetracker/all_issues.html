@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="page-container">
+        <div class="col-12">
+            <h2>Issue Tracker</h2>
+            <p>Here you will find our issue tracker - where you can report a bug, request a feature, comment on each item
+            and upvote on already reported / requested items.</p>
+            <p>Click below to look at the reported bugs or report one yourself.</p>
+        </div>
+        <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordionBugs">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordionRules" href="#collapseBugs">Bugs</a>
+                    </h4>
+                </div>
+                <div id="collapseBugs" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <h1>Bug Issues</h1>
+                        <p>Found a bug? Report it here.</p>
+                        {% if user.is_authenticated %}
+                            <p><button class="btn page-button" onclick="location.href='{% url 'new_issue' %}'">Report Bug!</button></p>
+                        {% endif %}
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><strong>Title</strong></th>
+                                <th><strong>Description</strong></th>
+                                <th><strong>Votes</strong></th>
+                                <th><strong>Status</strong></th>
+                                <th><strong>Updated</strong></th>
+                                <th><strong>Comments</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for issue in issues %}
+                            {% if issue.type == "Bug" %}
+                                {% include 'issuetracker/issue_item.html' %}
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <p>Click below to look at the suggested features or request your own.</p>
+        </div>
+        <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordionFeatures">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordionRules" href="#collapseFeatures">Features</a>
+                    </h4>
+                </div>
+                <div id="collapseFeatures" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <h1>Feature Request</h1>
+                        <p>Want a different feature? Request it here.</p>
+                        {% if user.is_authenticated %}
+                            <p><button class="btn page-button" onclick="location.href='{% url 'new_issue' %}'">Request feature!</button></p>
+                        {% endif %}
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><strong>Title</strong></th>
+                                <th><strong>Description</strong></th>
+                                <th><strong>Votes</strong></th>
+                                <th><strong>Status</strong></th>
+                                <th><strong>Updated</strong></th>
+                                <th><strong>Comments</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for issue in issues %}
+                            {% if issue.type == "Feature" %}
+                                {% include 'issuetracker/issue_item.html' %}
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <h2>How we deal with issues</h2>
+            <p>As a subscriber you are able to upvote on features, we deal with issues in the issue tracker in the following way.</p>
+            <ol>
+                <li>Bugs</li>
+                <ul>
+                    <li>The top voted bug is dealt with as a priority</li>
+                    <li>We constantly check new bugs being reported</li>
+                </ul>
+                <li>Features</li>
+                <ul>
+                    <li>Half of our time is spent developing the top requested feature</li>
+                </ul>
+            </ol>
+            <p>In the future we will be looking to publish charts with the amount of bugs and features we deal with on a
+            daily basis.</p>
+        </div>
+    </section>
+{% endblock %}

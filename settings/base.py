@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'bugs',
     'features',
     'leagues',
+    'issuetracker',
 ]
 
 MIDDLEWARE = [
