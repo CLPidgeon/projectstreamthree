@@ -1,0 +1,14 @@
+{% load issue_extras %}
+<tbody>
+    <tr>
+        <td>{{ issue.title }}</td>
+        <td>{{ issue.description }}</td>
+        <td style="text-align: center;" ><span class="vote-badge">{{ issue | total_votes }}</span>
+        {% autoescape off %}
+            {% user_feature_vote_button issue user %}
+        {% endautoescape %}</td>
+        <td>{{ issue.status }}</td>
+        <td>{{ issue.updated }}</td>
+        <td><button class="btn page-button" onclick="location.href={{ issue.id }}">View Comments</button></td>
+    </tr>
+</tbody>

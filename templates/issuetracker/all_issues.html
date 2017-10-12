@@ -77,7 +77,7 @@
                         <tbody>
                         {% for issue in issues %}
                             {% if issue.type == "Feature" %}
-                                {% include 'issuetracker/issue_item.html' %}
+                                {% include 'issuetracker/feature_item.html' %}
                             {% endif %}
                         {% endfor %}
                         </tbody>

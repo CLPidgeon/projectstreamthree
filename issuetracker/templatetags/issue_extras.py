@@ -1,5 +1,6 @@
 from django import template
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 
 register = template.Library()
@@ -17,6 +18,22 @@ def user_vote_button(issue, user):
            </a>
            </div>""" % reverse('issue_vote', kwargs={'issue_id': issue.id})
             return link
+    return ""
+
+
+@register.simple_tag
+def user_feature_vote_button(issue, user):
+
+    vote = issue.issue_votes.filter(user_id=user.id).first()
+    if user.subscription_end > timezone.now():
+        if not vote:
+            if user.is_authenticated():
+                link = """
+                <a href="%s" class="btn vote-button btn-sm">
+                 Upvote!
+                </a>
+                </div>""" % reverse('issue_vote', kwargs={'issue_id': issue.id})
+                return link
     return ""
 
 

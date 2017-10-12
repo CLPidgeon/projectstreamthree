@@ -46,5 +46,5 @@ class Comments(models.Model):
 
 class Vote(models.Model):
 
-    Issue = models.ForeignKey(Issue, related_name='issue_votes')
+    issue = models.ForeignKey(Issue, related_name='issue_votes')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='issue_votes')
