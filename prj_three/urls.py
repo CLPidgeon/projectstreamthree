@@ -59,7 +59,7 @@ urlpatterns = [
     url(r'^subscriptions_webhook/$', accounts_views.subscriptions_webhook, name='subscriptions_webhook'),
 
     # Issue Tracker
-    url(r'issues/', include('issuetracker.urls')),
+    url(r'^issues/', include('issuetracker.urls')),
 
     # League Pages
     url(r'^EIHL/$', league_views.eihl, name='eihl'),

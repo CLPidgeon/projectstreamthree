@@ -3,7 +3,7 @@ beautifulsoup4==4.4.1
 django-disqus==0.5
 Django==1.10
 django-emoticons==1.1.2
-djangorestframework==3.3
+djangorestframework==3.6.3
 django-forms-bootstrap==3.0.1
 django-tinymce==2.2.0
 gunicorn==19.4

@@ -79,8 +79,7 @@ def cancel_subscription(request):
 def subscriptions_webhook(request):
     event_json = json.loads(request.body)
     try:
-        # event commented out until project is hosted
-        # event = stripe.Event.retrieve(event_json['object']['id'])
+        event = stripe.Event.retrieve(event_json['object']['id'])
         cust = event_json['object']['customer']
         paid = event_json['object']['paid']
         user = User.objects.get(stripe_id=cust)
