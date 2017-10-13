@@ -21,15 +21,14 @@ def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            user.save()
+            form.save()
             user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
             if user:
                 auth.login(request, user)
                 messages.success(request, "You have successfully registered")
                 return redirect(reverse('profile'))
             else:
-                messages.error(request, "We were unable to log you in at this time")
+                messages.error(request, "unable to log you in at this time!")
     else:
         form = UserRegistrationForm()
     args = {'form': form}
@@ -93,6 +92,7 @@ def subscriptions_webhook(request):
 
 @login_required(login_url='/login/')
 def profile(request):
+
     return render(request, 'profile.html')
 
 
