@@ -8,3 +8,11 @@ def get_index(request):
 
 def fantasy(request):
     return render(request, 'fantasyIH.html')
+
+
+def get_about(request):
+    return render(request, 'about.html')
+
+
+def get_contact(request):
+    return render(request, 'contact.html')

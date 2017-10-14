@@ -29,6 +29,8 @@ urlpatterns = [
 
     # Flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^about', views.get_about, name='about'),
+    url(r'^contact', views.get_contact, name='contact'),
 
     # Fantasy Ice Hockey
     url(r'^fantasy', views.fantasy, name='fantasy'),
