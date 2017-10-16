@@ -5,7 +5,6 @@ from django.core.urlresolvers import resolve
 from accounts.models import User
 
 
-# Create your tests here.
 class HomePageTest(TestCase):
     fixtures = ['subjects', 'user']
 

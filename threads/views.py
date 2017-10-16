@@ -32,18 +32,18 @@ def new_thread(request, subject_id):
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset(request.POST)
         if thread_form.is_valid() and post_form.is_valid() and poll_form.is_valid() and poll_subject_formset.is_valid():
-            thread = thread_form.save(False)
-            thread.subject = subject
-            thread.user = request.user
-            thread.save()
+            this_thread = thread_form.save(False)
+            this_thread.subject = subject
+            this_thread.user = request.user
+            this_thread.save()
 
             post = post_form.save(False)
             post.user = request.user
-            post.thread = thread
+            post.thread = this_thread
             post.save()
 
             poll = poll_form.save(False)
-            poll.thread = thread
+            poll.thread = this_thread
             poll.save()
 
             for subject_form in poll_subject_formset:
@@ -51,7 +51,7 @@ def new_thread(request, subject_id):
                 subject.poll = poll
                 subject.save()
             messages.success(request, 'You have created a new thread')
-            return redirect(reverse('thread', args={thread.pk}))
+            return redirect(reverse('thread', args={this_thread.pk}))
     else:
         thread_form = ThreadForm()
         post_form = PostForm()
@@ -70,29 +70,29 @@ def new_thread(request, subject_id):
 
 @login_required(login_url='/login/')
 def thread(request, thread_id):
-    thread_ = get_object_or_404(Thread, pk=thread_id)
-    args = {'thread': thread_}
+    this_thread_ = get_object_or_404(Thread, pk=thread_id)
+    args = {'thread': this_thread_}
     args.update(csrf(request))
     return render(request, 'forum/thread.html', args)
 
 
 @login_required(login_url='/login/')
 def new_post(request, thread_id):
-    thread = get_object_or_404(Thread, pk=thread_id)
+    this_thread = get_object_or_404(Thread, pk=thread_id)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(False)
-            post.thread = thread
+            post.thread = this_thread
             post.user = request.user
             post.save()
             messages.success(request, 'Your post has been added to the thread')
-            return redirect(reverse('thread', args={thread.pk}))
+            return redirect(reverse('thread', args={this_thread.pk}))
     else:
         form = PostForm()
     args = {
         'form': form,
-        'form_action': reverse('new_post', args={thread.id}),
+        'form_action': reverse('new_post', args={this_thread.id}),
         'button_text': 'New Post'
     }
     args.update(csrf(request))
@@ -101,19 +101,19 @@ def new_post(request, thread_id):
 
 @login_required(login_url='/login/')
 def edit_post(request, thread_id, post_id):
-    thread = get_object_or_404(Thread, pk=thread_id)
+    this_thread = get_object_or_404(Thread, pk=thread_id)
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
             messages.success(request, 'You have updated your post')
-            return redirect(reverse('thread', args={thread.pk}))
+            return redirect(reverse('thread', args={this_thread.pk}))
     else:
         form = PostForm(instance=post)
     args = {
         'form': form,
-        'form_action': reverse('edit_post', kwargs={'thread_id': thread.id, 'post_id': post.id}),
+        'form_action': reverse('edit_post', kwargs={'thread_id': this_thread.id, 'post_id': post.id}),
         'button_text': 'Update Post'
     }
     args.update(csrf(request))
@@ -121,7 +121,7 @@ def edit_post(request, thread_id, post_id):
 
 
 @login_required(login_url='/login/')
-def delete_post(request, post_id, thread_id):
+def delete_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     thread_id = post.thread.id
     post.delete()
@@ -131,8 +131,8 @@ def delete_post(request, post_id, thread_id):
 
 @login_required(login_url='/login/')
 def thread_vote(request, thread_id, subject_id):
-    thread = Thread.objects.get(id=thread_id)
-    subject = thread.poll.votes.filter(user=request.user)
+    this_thread = Thread.objects.get(id=thread_id)
+    subject = this_thread.poll.votes.filter(user=request.user)
     if subject:
         messages.error(request, 'You have already voted on this!')
         return redirect(reverse('thread', args={thread_id}))

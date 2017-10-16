@@ -26,14 +26,12 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index, name='index'),
-
-    # Flatpages
-    url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^about', views.get_about, name='about'),
     url(r'^contact', views.get_contact, name='contact'),
 
     # Fantasy Ice Hockey
     url(r'^fantasy', views.fantasy, name='fantasy'),
+    url(r'^EIHL/$', league_views.fantasy_eihl, name='eihl'),
 
     # Blog
     url(r'', include('blog.urls')),
@@ -62,10 +60,6 @@ urlpatterns = [
 
     # Issue Tracker
     url(r'^issues/', include('issuetracker.urls')),
-
-    # League Pages
-    url(r'^EIHL/$', league_views.eihl, name='eihl'),
-    url(r'^GB/$', league_views.GB, name="GB"),
 
 ]
 

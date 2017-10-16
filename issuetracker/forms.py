@@ -5,7 +5,6 @@ from .models import Issue, Comments
 class IssueForm(forms.ModelForm):
 
     class Meta:
-
         model = Issue
         fields = ('title', 'description', 'type')
 
@@ -13,6 +12,5 @@ class IssueForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
 
     class Meta:
-
         model = Comments
         fields = ['comments']

@@ -38,10 +38,8 @@
             if(!$('#id_is_a_poll').is('checked')){
                 $('#poll_form').hide()
             }
-
             $('#id_is_a_poll').click(function(el){
                 var poll_form = $('#poll_form');
-
                 if(poll_form.is(':visible')){
                     poll_form.hide()
                 } else{

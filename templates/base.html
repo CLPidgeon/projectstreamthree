@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.css' %}">
     {% block head_js %}{% endblock head_js %}
 </head>
+
 <body>
     <section class="page">
         <nav class="navbar navbar-fixed-top navbar-custom">
@@ -29,23 +30,18 @@
                 <ul id="myCollapsingList" class="nav nav-justified collapse navbar-collapse">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about/">About</a></li>
-                <li><a href="/fantasy">Fantasy</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            Leagues<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/EIHL">EIHL</a></li>
-                            <li><a href="/GB">Team GB</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/fantasy">Fantasy</a></li>
+                    <li><a href="/EIHL">EIHL</a></li>
                     <li><a href="/forum/">Forum</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/issues/tracker">Issue Tracker</a></li>
-                    <li><a href="/subscribe/">Subscribe</a></li>
                     <li><a href="/contact/">Contact</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">Profile</a></li>
+                        {% if user.is_subscribed %}
+                            {% else %}
+                            <li><a href="/subscribe/">Subscribe</a></li>
+                        {% endif %}
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
                     {% else %}
                     <li><a href="{% url 'register' %}">Sign Up</a></li>
