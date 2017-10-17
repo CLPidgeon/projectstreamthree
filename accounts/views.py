@@ -11,13 +11,12 @@ from models import User
 import json
 import stripe
 import arrow
-
-
 stripe.api_key = settings.STRIPE_SECRET
 
 
 # Code edited from Code Institute Lesson
 def register(request):
+    "Submitting the registration form if valid"
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -38,6 +37,7 @@ def register(request):
 
 @login_required(login_url='/login/')
 def subscribe(request):
+    "Setting up user subscription"
     if request.method == 'POST':
         form = UserSubscriptionForm(request.POST)
         if form.is_valid():
@@ -66,6 +66,7 @@ def subscribe(request):
 
 @login_required(login_url='/login/')
 def cancel_subscription(request):
+    "Cancelling user subscription at the end of 4 weeks paid for"
     try:
         customer = stripe.Customer.retrieve(request.user.stripe_id)
         customer.cancel_subscription(at_period_end=True)
@@ -76,6 +77,7 @@ def cancel_subscription(request):
 
 @csrf_exempt
 def subscriptions_webhook(request):
+    "Checking payment / renewal successful and updating subscription expiry date"
     event_json = json.loads(request.body)
     try:
         event = stripe.Event.retrieve(event_json['object']['id'])
@@ -83,7 +85,7 @@ def subscriptions_webhook(request):
         paid = event_json['object']['paid']
         user = User.objects.get(stripe_id=cust)
         if user and paid:
-            user.subscription_end = arrow.now().replace(weeks=+4).datetime  # add 4 weeks from now
+            user.subscription_end = arrow.now().replace(weeks=+4).datetime
             user.save()
     except stripe.InvalidRequestError, e:
         return HttpResponse(status=404)
@@ -92,7 +94,7 @@ def subscriptions_webhook(request):
 
 @login_required(login_url='/login/')
 def profile(request):
-
+    "Getting a users profile"
     return render(request, 'profile.html')
 
 
@@ -117,6 +119,7 @@ def login(request):
 
 
 def logout(request):
+    "Logs user out"
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))

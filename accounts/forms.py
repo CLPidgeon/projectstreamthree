@@ -4,9 +4,9 @@ from accounts.models import User
 from django.core.exceptions import ValidationError
 
 
-# Code taken from Code Institute Lesson
+# Code edited from Code Institute Lesson
 class UserRegistrationForm(UserCreationForm):
-    "Registration form taking email and password"
+    "Registration form taking a username, email and password"
     password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput

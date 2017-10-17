@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 
 # Code taken from Code Institute Lesson
 class AccountUserManager(UserManager):
-
+    "Creating the User"
     def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
         now = timezone.now()
         if not email:
@@ -23,11 +23,10 @@ class AccountUserManager(UserManager):
 
 
 class User(AbstractUser):
-
+    "Adding subscription information"
     stripe_id = models.CharField(max_length=40, default='')
     subscription_end = models.DateTimeField(default=timezone.now)
     objects = AccountUserManager()
 
     def is_subscribed(self):
-
         return self.subscription_end > timezone.now()

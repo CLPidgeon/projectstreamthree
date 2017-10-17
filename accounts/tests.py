@@ -9,6 +9,7 @@ class CustomerUserTest(TestCase):
 
     def test_registration_form(self):
         form = UserRegistrationForm({
+            'username': 'clare',
             'email': 'test@test.com',
             'password1': 'logmein',
             'password2': 'logmein',
@@ -17,15 +18,17 @@ class CustomerUserTest(TestCase):
 
     def test_registration_form_fails_with_password_not_matching(self):
         form = UserRegistrationForm({
+            'username': 'clarepidge',
             'email': 'test@test.com',
             'password1': 'logmein',
-            'password2': 'logemin',
+            'password2': 'logemmmmin',
         })
         self.assertFalse(form.is_valid())
         self.assertRaisesMessage(forms.ValidationError, 'Passwords do not match', form.full_clean())
 
     def test_registration_form_fails_with_no_email(self):
         form = UserRegistrationForm({
+            'username': 'pidge',
             'password1': 'logmein',
             'password2': 'logmein',
         })
