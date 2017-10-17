@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="page-container">
-
         <h2>Success!</h2>
         <p>You are logged in as {{ user.username }} and you most recently logged in at {{ user.last_login }}. </p>
-        <p>You joined on {{ user.date_joined }}</p>
-
+        <p>You joined on {{ user.date_joined }} using {{ user.email }}</p>
         {% if user.is_subscribed %}
-            <p>Your stripe id is {{ user.stripe_id }}</p>
             <h2>Subscription Details:</h2>
+            <p>Your stripe id is {{ user.stripe_id }}</p>
             <p>You have {{ user.subscription_end|timeuntil }} left on your subscription</p>
             <p>To cancel your subscription click 'Cancel Subscription' below. You will remain subscribed until the end of
             your current subscription period.</p>
@@ -26,11 +24,9 @@
             }
             </script>
             {% else %}
-            <h2>Oh no!</h2>
-            <p>You are't subscribed! If you want to become a subscriber or read about our subscriber perks please click
-            <a href="/subscribe">here!</a></p>
+                <h2>Oh no!</h2>
+                <p>You are't subscribed! If you want to become a subscriber or read about our subscriber perks please click
+                <a href="/subscribe">here!</a></p>
         {% endif %}
-
-
     </section>
 {% endblock %}

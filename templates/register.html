@@ -3,7 +3,7 @@
 
 {% block content %}
   <form role="form" method="post" action="{% url 'register' %}">
-    <legend>Create An Account</legend>
+    <legend>Register for The Ice Hockey Site</legend>
     {% csrf_token %}
     {{ form | as_bootstrap }}
     <article class="form-group">

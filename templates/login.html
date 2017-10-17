@@ -2,7 +2,7 @@
 {% load bootstrap_tags %}
 {% block content %}
     <form role="form" method="post" action="{% url 'login' %}">
-        <legend>Login</legend>
+        <legend>The Ice Hockey Site Log In</legend>
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <div class="form-group">
