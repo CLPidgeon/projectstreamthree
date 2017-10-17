@@ -60,6 +60,7 @@ urlpatterns = [
 
     # Issue Tracker
     url(r'^issues/', include('issuetracker.urls')),
+    url(r'^issue/', include('issuetracker.urls')),
 
 ]
 
