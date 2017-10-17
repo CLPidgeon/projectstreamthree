@@ -16,6 +16,7 @@ TYPE = (
 
 
 class Issue(models.Model):
+    "Issue model"
     title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=255, null=False)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default='Todo')
@@ -35,6 +36,7 @@ class Issue(models.Model):
 
 
 class Comments(models.Model):
+    "Links comments to each issue"
     issue = models.ForeignKey(Issue, related_name='comments')
     comments = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)

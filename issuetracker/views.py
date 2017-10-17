@@ -49,6 +49,7 @@ class IssueView(APIView):
 
 @login_required(login_url='/login/')
 def new_issue(request):
+    "Submitting new issue form"
     if request.method == 'POST':
         form = IssueForm(request.POST, request.FILES)
         if form.is_valid():
@@ -62,11 +63,13 @@ def new_issue(request):
 
 @login_required(login_url='/login/')
 def issue_tracker(request):
+    "Retrieves all issues"
     issues = Issue.objects.all()
     return render(request, 'issuetracker/all_issues.html', {"issues": issues})
 
 
 def issue_detail(request, issue_id):
+    "Retrieves specific issue details"
     issue_ = get_object_or_404(Issue, pk=issue_id)
     args = {'issue': issue_}
     args.update(csrf(request))
@@ -75,6 +78,7 @@ def issue_detail(request, issue_id):
 
 @login_required(login_url='/login/')
 def issue_comment(request, issue_id):
+    "Allows commenting on an individual issue"
     issue = get_object_or_404(Issue, pk=issue_id)
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -96,6 +100,7 @@ def issue_comment(request, issue_id):
 
 @login_required(login_url='/login/')
 def issue_vote(request, issue_id):
+    "Allows user to upvote on an issue"
     issue = Issue.objects.get(id=issue_id)
     issue.issue_votes.create(issue=issue_id, user=request.user)
     return render(request, 'issuetracker/issue_vote.html', {'issue': issue})

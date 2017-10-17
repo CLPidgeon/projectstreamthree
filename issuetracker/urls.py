@@ -4,11 +4,11 @@ import views
 
 
 urlpatterns = [
-
+    # Issue admin
     url(r'^admin/$', IssueView.as_view()),
     url(r'admin/(?P<pk>[0-9]+)/$', IssueView.as_view()),
 
-    # Issue
+    # Issue Tracker
     url(r'tracker/$', views.issue_tracker, name='issue_tracker'),
     url(r'new', views.new_issue, name='new_issue'),
     url(r'vote/(?P<issue_id>[0-9]+)/$', views.issue_vote, name='issue_vote'),
