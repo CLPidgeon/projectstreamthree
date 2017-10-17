@@ -8,9 +8,9 @@
     {% endif %}
     </section>
     <hr>
-    <article>
+    <section>
         {% for comments in issue.comments.all %}
             {% include 'issuetracker/comments.html' %}
         {% endfor %}
-    </article>
+    </section>
 {% endblock %}

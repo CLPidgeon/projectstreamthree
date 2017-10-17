@@ -1,6 +1,5 @@
 {% load staticfiles %}
 {% load emoticons_tags %}
-
 <tr>
     <td>{{ post.user.username }}</td>
     <td>{% autoescape off %}{{ post.comment | emoticons }}{% endautoescape %}</td>

@@ -32,20 +32,19 @@
             </form>
         </section>
     </section>
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script>
-        $(function(){
-            if(!$('#id_is_a_poll').is('checked')){
-                $('#poll_form').hide()
-            }
-            $('#id_is_a_poll').click(function(el){
-                var poll_form = $('#poll_form');
+         $(function(){
+             if(!$('#id_is_a_poll').is('checked')){
+                 $('#poll_form').hide()
+             }
+             $('#id_is_a_poll').click(function(el){
+                 var poll_form = $('#poll_form');
                 if(poll_form.is(':visible')){
                     poll_form.hide()
                 } else{
-                    poll_form.show()
+                     poll_form.show()
                 }
-            })
-        });
+             })
+         });
     </script>
 {% endblock %}

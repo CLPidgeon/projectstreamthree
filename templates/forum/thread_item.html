@@ -1,7 +1,5 @@
 {% load thread_extras %}
-    <tr>
-        <td>
-            <a href="{% url 'thread' thread.id %}"><h4>{{ thread.name }}</h4></a>
-        </td>
-        <td>{{ thread | get_total_thread_posts }}</td>
-    </tr>
+<tr>
+    <td><a href="{% url 'thread' thread.id %}"><h4>{{ thread.name }}</h4></a></td>
+    <td>{{ thread | get_total_thread_posts }}</td>
+</tr>
