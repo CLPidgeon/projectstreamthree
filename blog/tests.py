@@ -4,7 +4,6 @@ from blog.views import post_list, post_detail, edit_post, new_post
 from django.core.urlresolvers import resolve
 
 
-# Create your tests here.
 class BlogPageTest(TestCase):
     def test_blog_list_resolves(self):
         blog_list = resolve('/blog/')
