@@ -7,6 +7,7 @@ from django.conf import settings
 
 # Code taken from Code Institute Lesson
 class Subject(models.Model):
+    "Subject model requiring a name and description"
     name = models.CharField(max_length=255)
     description = HTMLField()
 
@@ -15,6 +16,7 @@ class Subject(models.Model):
 
 
 class Thread(models.Model):
+    "A thread being related to it's subject"
     name = models.CharField(max_length=255)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='threads')
     subject = models.ForeignKey(Subject, related_name='threads')
@@ -22,6 +24,7 @@ class Thread(models.Model):
 
 
 class Post(models.Model):
+    "A post being related to it's thread"
     thread = models.ForeignKey(Thread, related_name='posts')
     comment = HTMLField(blank=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='posts')
