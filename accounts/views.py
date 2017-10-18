@@ -7,10 +7,6 @@ from django.template.context_processors import csrf
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
-from .serializers import UserSerializer
 from models import User
 import json
 import stripe
