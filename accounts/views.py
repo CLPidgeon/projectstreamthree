@@ -7,6 +7,10 @@ from django.template.context_processors import csrf
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from .serializers import UserSerializer
 from models import User
 import json
 import stripe
@@ -57,6 +61,7 @@ def subscribe(request):
                     messages.error(request, "We were unable to take payment from the card provided")
             except stripe.error.CardError, e:
                 messages.error(request, "Your card was declined!")
+                form.add_error(None, "Ooops! Details are incorrect, please check them")
     else:
         form = UserSubscriptionForm()
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}
