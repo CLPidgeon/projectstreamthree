@@ -43,9 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
-    'rest_framework_docs',
-    'rest_framework',
     'home',
     'accounts',
     'django_forms_bootstrap',
@@ -57,6 +54,7 @@ INSTALLED_APPS = [
     'polls',
     'tinymce',
     'emoticons',
+    'rest_framework',
     'leagues',
     'issuetracker',
 ]
@@ -86,8 +84,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 ]
 
 ROOT_URLCONF = 'prj_three.urls'
@@ -141,16 +138,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

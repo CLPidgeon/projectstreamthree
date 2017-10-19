@@ -2,8 +2,6 @@ arrow==0.7.0
 beautifulsoup4==4.4.1
 django-disqus==0.5
 Django==1.10
-django-cors-headers==2.1.0
-drfdocs==0.0.11
 django-emoticons==1.1.2
 djangorestframework==3.6.3
 django-forms-bootstrap==3.0.1
