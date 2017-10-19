@@ -5,7 +5,7 @@ from models import Poll, PollSubject
 # Code taken from Code Institute lesson
 class PollForm(forms.ModelForm):
     "Poll form requiring a question"
-    question = forms.CharField(label='Poll question:')
+    question = forms.CharField(label='Poll question:', required=False)
 
     class Meta:
         model = Poll

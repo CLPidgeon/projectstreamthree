@@ -34,7 +34,7 @@ def new_thread(request, subject_id):
         post_form = PostForm(request.POST)
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset(request.POST)
-        if 'is_a_poll' in request.POST:
+        if request.POST.get('is_a_poll'):
             if thread_form.is_valid() and post_form.is_valid() and poll_form.is_valid() and poll_subject_formset.is_valid():
                 this_thread = thread_form.save(False)
                 this_thread.subject = subject
