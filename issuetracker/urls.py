@@ -5,7 +5,7 @@ import views
 
 urlpatterns = [
     # Issue admin
-    url(r'^admin/$', IssueView.as_view()),
+    url(r'^admin/$', IssueView.as_view(), name='issue_admin'),
     url(r'admin/(?P<pk>[0-9]+)/$', IssueView.as_view()),
 
     # Issue Tracker

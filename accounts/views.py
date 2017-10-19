@@ -7,11 +7,32 @@ from django.template.context_processors import csrf
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from .serializers import UserSerializer
 from models import User
 import json
 import stripe
 import arrow
 stripe.api_key = settings.STRIPE_SECRET
+
+
+# Code taken from Code Institute Lesson
+class UserView(APIView):
+
+    permission_classes = ()
+
+    def post(self,request):
+        serializer = UserSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            data = serializer.data
+            user = User.objects.create(username=data["username"])
+            user.set_password(data["password"])
+            user.save()
+            return Response(data, status=status.HTTP_201_CREATED)
 
 
 # Code edited from Code Institute Lesson
@@ -57,7 +78,7 @@ def subscribe(request):
                     messages.error(request, "We were unable to take payment from the card provided")
             except stripe.error.CardError, e:
                 messages.error(request, "Your card was declined!")
-                form.add_error(None, "Ooops! Details are incorrect, please check them")
+                form.add_error(None, "Ooops! Details entered are incorrect, please check them!")
     else:
         form = UserSubscriptionForm()
     args = {'form': form, 'publishable': settings.STRIPE_PUBLISHABLE}

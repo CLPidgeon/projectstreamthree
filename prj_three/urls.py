@@ -25,6 +25,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^docs/', include('rest_framework_docs.urls')),
     url(r'^$', views.get_index, name='index'),
     url(r'^about', views.get_about, name='about'),
     url(r'^contact', views.get_contact, name='contact'),
@@ -52,6 +53,7 @@ urlpatterns = [
     url(r'^profile/$', accounts_views.profile, name='profile'),
     url(r'^login/$', accounts_views.login, name='login'),
     url(r'^logout/$', accounts_views.logout, name='logout'),
+    url(r'^accounts/', include('accounts.urls')),
 
     # Stripe
     url(r'subscribe', accounts_views.subscribe, name='subscribe'),
@@ -60,7 +62,6 @@ urlpatterns = [
 
     # Issue Tracker
     url(r'^issues/', include('issuetracker.urls')),
-    url(r'^issue/', include('issuetracker.urls')),
 
 ]
 
