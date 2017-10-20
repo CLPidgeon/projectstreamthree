@@ -8,7 +8,7 @@ register = template.Library()
 # Code taken from Code Institute Lesson
 @register.filter
 def get_total_subject_posts(subject):
-    "Gets the total number of posts on a subject"
+    """Gets the total number of posts on a subject"""
     total_posts = 0
     for thread in subject.threads.all():
         total_posts += thread.posts.count()
@@ -17,7 +17,7 @@ def get_total_subject_posts(subject):
 
 @register.filter
 def get_total_thread_posts(thread):
-    "Gets the total number of posts on a thread"
+    """Gets the total number of posts on a thread"""
     total_posts = thread.posts.count()
     return total_posts
 

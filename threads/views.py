@@ -13,20 +13,22 @@ from polls.models import PollSubject
 
 # Code taken from Code Institute Lesson
 def forum(request):
-    "Displays all subjects"
+    """Displays all subjects"""
     return render(request, 'forum/forum.html', {'subjects': Subject.objects.all()})
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def threads(request, subject_id):
-    "Displays all threads"
+    """Displays all threads"""
     subject = get_object_or_404(Subject, pk=subject_id)
     return render(request, 'forum/threads.html', {'subject': subject})
 
 
+# Code edited from Code Institute lesson
 @login_required(login_url='/login/')
 def new_thread(request, subject_id):
-    "Submitting a new thread"
+    """Submitting a new thread"""
     subject = get_object_or_404(Subject, pk=subject_id)
     poll_subject_formset = formset_factory(PollSubjectForm, extra=3)
     if request.method == 'POST':
@@ -34,6 +36,7 @@ def new_thread(request, subject_id):
         post_form = PostForm(request.POST)
         poll_form = PollForm(request.POST)
         poll_subject_formset = poll_subject_formset(request.POST)
+        # Checking if a poll is being submitted
         if request.POST.get('is_a_poll'):
             if thread_form.is_valid() and post_form.is_valid() and poll_form.is_valid() and poll_subject_formset.is_valid():
                 this_thread = thread_form.save(False)
@@ -81,18 +84,20 @@ def new_thread(request, subject_id):
     return render(request, 'forum/thread_form.html', args)
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def thread(request, thread_id):
-    "Displays the thread"
+    """Displays the thread"""
     this_thread_ = get_object_or_404(Thread, pk=thread_id)
     args = {'thread': this_thread_}
     args.update(csrf(request))
     return render(request, 'forum/thread.html', args)
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def new_post(request, thread_id):
-    "Submitting a new post"
+    """Submitting a new post"""
     this_thread = get_object_or_404(Thread, pk=thread_id)
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -114,9 +119,10 @@ def new_post(request, thread_id):
     return render(request, 'forum/post_form.html', args)
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def edit_post(request, thread_id, post_id):
-    "Editing a post"
+    """Editing a post"""
     this_thread = get_object_or_404(Thread, pk=thread_id)
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
@@ -136,9 +142,10 @@ def edit_post(request, thread_id, post_id):
     return render(request, 'forum/post_form.html', args)
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def delete_post(request, post_id):
-    "Deleting a post"
+    """Deleting a post"""
     post = get_object_or_404(Post, pk=post_id)
     thread_id = post.thread.id
     post.delete()
@@ -146,9 +153,10 @@ def delete_post(request, post_id):
     return redirect(reverse('thread', args={thread_id}))
 
 
+# Code taken from Code Institute lesson
 @login_required(login_url='/login/')
 def thread_vote(request, thread_id, subject_id):
-    "Voting on a poll in a thread"
+    """Voting on a poll in a thread"""
     this_thread = Thread.objects.get(id=thread_id)
     subject = this_thread.poll.votes.filter(user=request.user)
     if subject:

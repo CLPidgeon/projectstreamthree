@@ -6,7 +6,7 @@ from threads.models import Thread
 
 # Code taken from Code Institute Lesson
 class Poll(models.Model):
-    "Setting up Poll model and linking it to the thread"
+    """Setting up Poll model and linking it to the thread"""
     question = models.TextField()
     thread = models.OneToOneField(Thread, null=True)
 
@@ -15,7 +15,7 @@ class Poll(models.Model):
 
 
 class PollSubject(models.Model):
-    "Setting up Poll subject and linking it to the Poll"
+    """Setting up Poll subject and linking it to the Poll"""
     name = models.CharField(max_length=255)
     poll = models.ForeignKey(Poll, related_name='subjects')
 
@@ -24,7 +24,7 @@ class PollSubject(models.Model):
 
 
 class Vote(models.Model):
-    "Setting up the voting and linking it to the Poll, Subject and User voting"
+    """Setting up the voting and linking it to the Poll, Subject and User voting"""
     poll = models.ForeignKey(Poll, related_name='votes')
     subject = models.ForeignKey(PollSubject, related_name='votes')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='votes')
