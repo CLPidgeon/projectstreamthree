@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^contact', views.get_contact, name='contact'),
 
     # Fantasy Ice Hockey
-    url(r'^fantasy', views.fantasy, name='fantasy'),
+    url(r'^fantasy', views.get_fantasy, name='fantasy'),
     url(r'^EIHL/$', league_views.fantasy_eihl, name='eihl'),
 
     # Blog
