@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 
 # Code edited from Code Institute Lesson
 class UserRegistrationForm(UserCreationForm):
-    "Registration form taking a username, email and password"
+    """"Registration form taking a username, email and password"""
     password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput
@@ -36,8 +36,9 @@ class UserRegistrationForm(UserCreationForm):
         return email
 
 
+# Code edited from Code Institute Lesson
 class UserSubscriptionForm(forms.ModelForm):
-    "Stripe subscription form"
+    """Stripe subscription form, requires User email and password"""
     MONTH_ABBREVIATIONS = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June',
         'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
@@ -64,7 +65,8 @@ class UserSubscriptionForm(forms.ModelForm):
         return instance
 
 
+# Code taken from Code Institute
 class UserLoginForm(forms.Form):
-    "Log in form"
+    """Logs User in using email and password"""
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)

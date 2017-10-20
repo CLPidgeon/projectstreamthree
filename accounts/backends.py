@@ -1,8 +1,9 @@
 from models import User
 
 
+# Code taken from Code Institute
 class EmailAuth(object):
-    "Authenticating users using email"
+    """Checks password against email instead of username"""
     def authenticate(self, email=None, password=None):
         try:
             user = User.objects.get(email=email)
@@ -12,7 +13,6 @@ class EmailAuth(object):
             return None
 
     def get_user(self, user_id):
-        "Checking user is active"
         try:
             user = User.objects.get(pk=user_id)
             if user.is_active:

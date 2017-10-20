@@ -24,6 +24,7 @@ class UserView(APIView):
     permission_classes = ()
 
     def post(self,request):
+        """Creating a separate User for editing API data"""
         serializer = UserSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -37,7 +38,7 @@ class UserView(APIView):
 
 # Code edited from Code Institute Lesson
 def register(request):
-    "Submitting the registration form if valid"
+    """Submitting regular User form if it is valid"""
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -58,7 +59,7 @@ def register(request):
 
 @login_required(login_url='/login/')
 def subscribe(request):
-    "Setting up user subscription"
+    """Setting up user subscription"""
     if request.method == 'POST':
         form = UserSubscriptionForm(request.POST)
         if form.is_valid():
@@ -86,9 +87,10 @@ def subscribe(request):
     return render(request, 'stripe.html', args)
 
 
+# Code taken from Code Institute Lesson
 @login_required(login_url='/login/')
 def cancel_subscription(request):
-    "Cancelling user subscription at the end of 4 weeks paid for"
+    """Cancelling user subscription at the end of 4 weeks paid for"""
     try:
         customer = stripe.Customer.retrieve(request.user.stripe_id)
         customer.cancel_subscription(at_period_end=True)
@@ -97,9 +99,10 @@ def cancel_subscription(request):
     return redirect('profile')
 
 
+# Code taken from Code Institute Lesson
 @csrf_exempt
 def subscriptions_webhook(request):
-    "Checking payment / renewal successful and updating subscription expiry date"
+    """Checking payment / renewal successful and updating subscription expiry date"""
     event_json = json.loads(request.body)
     try:
         event = stripe.Event.retrieve(event_json['object']['id'])
@@ -116,12 +119,13 @@ def subscriptions_webhook(request):
 
 @login_required(login_url='/login/')
 def profile(request):
-    "Getting a users profile"
+    """Getting a users profile"""
     return render(request, 'profile.html')
 
 
+# Code taken from Code Institute Lesson
 def login(request):
-    "Log in form"
+    """Log in form"""
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():
@@ -141,7 +145,7 @@ def login(request):
 
 
 def logout(request):
-    "Logs user out"
+    """Logs user out"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
