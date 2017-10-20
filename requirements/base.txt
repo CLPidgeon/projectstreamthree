@@ -4,6 +4,8 @@ django-disqus==0.5
 Django==1.10
 django-emoticons==1.1.2
 djangorestframework==3.6.3
+pyJWT ==1.4.2
+djangorestframework-jwt==1.8.0
 django-forms-bootstrap==3.0.1
 django-tinymce==2.2.0
 gunicorn==19.4
