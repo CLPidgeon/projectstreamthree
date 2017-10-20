@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.test import TestCase
-from blog.views import post_list, post_detail, edit_post, new_post
+from .views import post_list, post_detail, edit_post, new_post
 from django.core.urlresolvers import resolve
 
 
