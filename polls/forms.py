@@ -12,6 +12,7 @@ class PollForm(forms.ModelForm):
         fields = ['question']
 
 
+# Code taken from Code Institute lesson
 class PollSubjectForm(forms.ModelForm):
     """Poll options required for the Poll question"""
     name = forms.CharField(label='Poll option:', required=True)

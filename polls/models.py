@@ -4,7 +4,7 @@ from django.conf import settings
 from threads.models import Thread
 
 
-# Code taken from Code Institute Lesson
+# Code taken from Code Institute lesson
 class Poll(models.Model):
     """Setting up Poll model and linking it to the thread"""
     question = models.TextField()
@@ -14,6 +14,7 @@ class Poll(models.Model):
         return self.question
 
 
+# Code taken from Code Insitute lesson
 class PollSubject(models.Model):
     """Setting up Poll subject and linking it to the Poll"""
     name = models.CharField(max_length=255)
@@ -23,6 +24,7 @@ class PollSubject(models.Model):
         return self.name
 
 
+# Code taken from Code Institute lesson
 class Vote(models.Model):
     """Setting up the voting and linking it to the Poll, Subject and User voting"""
     poll = models.ForeignKey(Poll, related_name='votes')
