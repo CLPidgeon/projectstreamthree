@@ -24,7 +24,7 @@ SECRET_KEY = 'it4nl$4bj*!8%5a+fb=-3mb#*qoaepqd7#ungipoc=@zrp$qqk'
 
 SITE_ID = 2
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ice-hockey-site.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = (
