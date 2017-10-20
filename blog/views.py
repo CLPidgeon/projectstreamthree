@@ -7,13 +7,13 @@ from .forms import BlogPostForm
 
 # Code taken from Code Institute Lesson
 def post_list(request):
-    "Lists blog posts with most recent at the top"
+    """Lists blog posts with the most recent at the top"""
     posts = Post.objects.filter(published_date__lt=timezone.now()).order_by('-published_date')
     return render(request, 'blogposts.html', {'posts': posts})
 
 
 def post_detail(request, id):
-    "Shows full blog entry"
+    """Shows full blog entry"""
     post = get_object_or_404(Post, pk=id)
     post.views += 1
     post.save()
@@ -21,7 +21,7 @@ def post_detail(request, id):
 
 
 def new_post(request):
-    "Submitting new blog form"
+    """Submitting new blog form"""
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -35,7 +35,7 @@ def new_post(request):
 
 
 def edit_post(request, id):
-    "Editing a blog post"
+    """Editing a blog post"""
     post = get_object_or_404(Post, pk=id)
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES, instance=post)

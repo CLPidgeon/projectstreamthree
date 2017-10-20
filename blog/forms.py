@@ -2,6 +2,7 @@ from django import forms
 from .models import Post
 
 
+# Code taken from Code Institute lesson
 class BlogPostForm(forms.ModelForm):
     "New blog form"
     class Meta:
