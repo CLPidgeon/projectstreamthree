@@ -25,6 +25,7 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^docs/', include('rest_framework_docs.urls')),
     url(r'^$', views.get_index, name='index'),
     url(r'^about', views.get_about, name='about'),
     url(r'^contact', views.get_contact, name='contact'),
