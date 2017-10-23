@@ -160,24 +160,24 @@ table {
 
 .post-table{
     width: 100%;
-    background-color: #B71C1C;
-    color: aliceblue;
+    background-color: #283593;
+    color: black;
 }
 
 .post-table th{
     padding:10px;
-    border: 3px #B71C1C solid;
+    border: 3px black solid;
     color: #283593;
-    background-color: aliceblue;
+    background-color: #B71C1C;
 }
 
 .post-table td{
     border: 3px black solid;
-    color: aliceblue;
+    color: black;
 }
 
 .post-table tr:nth-child(even){
-    background-color: #283593;
+    background-color: aliceblue;
 }
 
 .league-tableContainer {
