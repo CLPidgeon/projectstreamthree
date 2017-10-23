@@ -1,10 +1,12 @@
 {% load issue_extras %}
 <tbody>
     <tr>
+        <!--Individual bug details-->
         <td>{{ issue.title }}</td>
         <td>{{ issue.description }}</td>
         <td style="text-align: center;" ><span class="vote-badge">{{ issue | total_votes }}</span>
         {% autoescape off %}
+            <!--Button to upvote the bug-->
             {% user_vote_button issue user %}
         {% endautoescape %}</td>
         <td>{{ issue.status }}</td>

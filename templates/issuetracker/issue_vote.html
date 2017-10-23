@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <section style="color: aliceblue">
+    <section class="page-container">
+        <!--Vote confirmation-->
         <p>Thank you, your vote for "{{ issue.description }}" has been added!</p>
+        <p><a href="issues/tracker/" class="btn page-button">Back to Tracker</a></p>
     </section>
 {% endblock %}

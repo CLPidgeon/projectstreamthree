@@ -1,5 +1,6 @@
 {% load thread_extras %}
 <tr>
+    <!--Lists threads and their total posts-->
     <td><a href="{% url 'thread' thread.id %}"><h4>{{ thread.name }}</h4></a></td>
     <td>{{ thread | get_total_thread_posts }}</td>
 </tr>

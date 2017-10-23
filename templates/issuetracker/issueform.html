@@ -2,9 +2,11 @@
 {% block content %}
     {% load bootstrap_tags %}
     <h1 style="color: aliceblue">Report An Issue!</h1>
+    <!--New issue form-->
     <form method="POST" class="form-group">
         {% csrf_token %}
         {{ form | as_bootstrap }}
         <button type="submit" class="btn page-button">Submit</button>
     </form>
+    <!--End of new issue form-->
 {% endblock %}

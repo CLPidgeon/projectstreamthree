@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-
     <section class="col-lg-9">
         <div class="page-container">
-            <h3>Fantasy Elite Ice Hockey League</h3>
-            <p>Here's the latest standings of the Fantasy Elite Ice Hockey League, standings are updated on Sundays after
-            the weekend games have concluded.</p>
+            <h1>Fantasy Elite Ice Hockey League</h1>
             <ul>
                 <li><strong>WP</strong> - Weeks Played</li>
                 <li><strong>GWP</strong> - Game Week Points</li>
                 <li><strong>TP</strong> - Total Points</li>
             </ul>
+            <p>Here's the latest standings of the Fantasy Elite Ice Hockey League, standings are updated on Sundays after
+            the points from the latest round of games.</p>
         </div>
         <br />
         <div class="league-tableContainer">
+            <!--Fantasy EIHL table-->
             <table class="post-table">
                 <tr>
                     <th>Team</th>
@@ -22,55 +22,55 @@
                     <th>TP</th>
                 </tr>
                 <tr>
-                    <td>GretzkysAllSTARS</td>
+                    <td>GretzkyStars</td>
                     <td>6</td>
                     <td>50</td>
                     <td>250</td>
                 </tr>
                 <tr>
-                    <td>SirTonyHand</td>
+                    <td>ToeKneeHand</td>
                     <td>6</td>
                     <td>45</td>
                     <td>225</td>
                 </tr>
                 <tr>
-                    <td>FinnersFantastics</td>
+                    <td>ThirdLine</td>
                     <td>6</td>
                     <td>35</td>
                     <td>220</td>
                 </tr>
                 <tr>
-                    <td>YellowCats</td>
+                    <td>Grinders</td>
                     <td>6</td>
                     <td>40</td>
                     <td>210</td>
                 </tr>
                 <tr>
-                    <td>GreenGiants</td>
+                    <td>Stripes</td>
                     <td>6</td>
                     <td>35</td>
                     <td>200</td>
                 </tr>
                 <tr>
-                    <td>Dampened Flames</td>
+                    <td>TryHards</td>
                     <td>6</td>
                     <td>30</td>
                     <td>195</td>
                 </tr>
                 <tr>
-                    <td>CorysContinentalChamps</td>
+                    <td>Champs</td>
                     <td>6</td>
                     <td>10</td>
                     <td>190</td>
                 </tr>
                 <tr>
-                    <td>SuperSlapshots</td>
+                    <td>StormStars</td>
                     <td>6</td>
                     <td>15</td>
                     <td>185</td>
                 </tr>
                 <tr>
-                    <td>TeamofGlatts</td>
+                    <td>DougGlatts</td>
                     <td>6</td>
                     <td>25</td>
                     <td>180</td>
@@ -93,18 +93,16 @@
                     <td>-6</td>
                     <td>60</td>
                 </tr>
-
             </table>
+            <!--End of fantasy EIHL table-->
         </div>
-
     </section>
 
-    <div class="col-sm-3 page-container">
-    <p>Official EIHL Twitter Feed</p>
-
+    <section class="col-sm-3 page-container">
+        <h1>EIHL Twitter Feed</h1>
+        <!--Twitter widget for EIHL-->
         <a class="twitter-timeline" data-lang="en" data-width="300" data-height="600" data-theme="dark"
         href="http://twitter.com/officialEIHL?ref_src=twsrc%5Etfw">Tweets by officialEIHL</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    </div>
+        <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </section>
 {% endblock %}

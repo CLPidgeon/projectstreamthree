@@ -7,11 +7,13 @@
     <br />
     <section class="col-12">
         {% if user.is_authenticated %}
+            <!--User has to be logged in to create a new thread-->
             <p><a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a></p>
         {% endif %}
             <p><a href="/forum/" class="btn page-button">Back to Forum</a></p>
         <table class="thread-table">
             <tr>
+                <!--Lists the threads-->
                 <th>Thread Name</th>
                 <th>Posts</th>
             </tr>

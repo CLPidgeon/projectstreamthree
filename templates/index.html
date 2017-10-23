@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <section class="page-container">
+        <!--Home page with links to the various sections of the site-->
         <h2>Welcome to the best ice hockey website you ever did see!</h2>
         <p>This site aims to be the only place you need to go to find information on British ice hockey. There are many ways
         for you to get involved. Head over to the <a href="/about">about</a> page to find out more about us!</p>
@@ -10,9 +11,10 @@
         <p>We have a <a href="/forum/">forum</a> for you to get involved in. The forum is split into different sections;
         British ice hockey, World ice hockey and The Bar. You'll need to <a href="{% url 'register' %}">
         register</a> for an account to read the forum and contribute your thoughts.</p>
-        <p>We also have our issue tracker for <a href="/issues/tracker">bugs and features</a>.
-            If you stumble across a bug or want to request a feature just fill in the form! You will need to <a href="/subscribe/">subscribe</a> to
+        <p>We also have our issue tracker for <a href="/issues/tracker">bugs and features</a>. If you stumble across a bug
+            or want to request a feature just fill in the form! You will need to <a href="/subscribe/">subscribe</a> to
             upvote on features though.</p>
         <p>Have an issue or something to discuss with us? Head over to the <a href="/contact/">contact</a> page and get in touch.</p>
+        <!--End of home page content-->
     </section>
 {% endblock %}

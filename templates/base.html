@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/subscription.js' %}"></script>
+    <script src="{% static 'js/polls.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/font-awesome-4.7.0/css/font-awesome.css' %}">
     {% block head_js %}{% endblock head_js %}
 </head>
 
 <body>
     <section class="page">
+        <!--Navigation - Collapses to list when on small screens-->
         <nav class="navbar navbar-fixed-top navbar-custom">
             <section class="container">
                 <section class="navbar-header">
@@ -26,7 +29,6 @@
                         <span class="icon-bar"></span>
                     </button>
                 </section>
-
                 <ul id="myCollapsingList" class="nav nav-justified collapse navbar-collapse">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about/">About</a></li>
@@ -36,13 +38,16 @@
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/issues/tracker">Issue Tracker</a></li>
                     <li><a href="/contact/">Contact</a></li>
+                    <!--Profile and logout only show if user is logged in-->
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">Profile</a></li>
+                        <!--Subscribe tab is only displayed if user is logged in and not subscribed-->
                         {% if user.is_subscribed %}
                             {% else %}
                             <li><a href="/subscribe/">Subscribe</a></li>
                         {% endif %}
                     <li><a href="{% url 'logout' %}">LogOut</a></li>
+                    <!--Register and log in only shown if user isn't signed in-->
                     {% else %}
                     <li><a href="{% url 'register' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
@@ -50,18 +55,22 @@
                 </ul>
             </section>
         </nav>
+        <!--End of navigation-->
 
         <article class="banner">
+            <!--Displays on each page-->
             <h1>The Ice Hockey Site</h1>
             <p>Your home for all your British Ice Hockey needs!</p>
         </article>
 
         <section class="page-content">
+            <!--Individual page content loaded here-->
             {% block content %}
             {% endblock %}
         </section>
 
         <footer class="navbar-fixed-bottom footer-content">
+            <!--Social Media links-->
             <p>
                 <a href="http://www.facebook.com"><img src="/media/img/facebook.jpeg" alt="facebook page" height="50px" width="50px"></a>
                 <a href="http://www.twitter.com"><img src="/media/img/twitter.jpeg" alt="twitter stream" height="50px" width="50px"></a>

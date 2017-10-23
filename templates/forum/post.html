@@ -1,6 +1,7 @@
 {% load staticfiles %}
 {% load emoticons_tags %}
 <tr>
+    <!--Shows the post and the user who posted it-->
     <td>{{ post.user.username }}</td>
     <td>{% autoescape off %}{{ post.comment | emoticons }}{% endautoescape %}</td>
     <td>{% include 'forum/comment_details.html' %}</td>

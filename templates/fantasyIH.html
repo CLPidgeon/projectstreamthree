@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
     <section class="page-container">
         <div class="col-12">
             <h1>EIHL Fantasy Ice Hockey</h1>
             <p>The only Elite Ice Hockey fantasy league! Click the panel below to have a read of the rules then have a look
             at a sample team. You must register as a user to create a team and enter the league.</p>
         </div>
-
+        <!--Rules section-->
         <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordionRules">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -67,6 +66,9 @@
                 </div>
             </div>
         </div>
+        <!--End of rules section-->
+
+        <!--Sample roster section-->
         <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -79,6 +81,7 @@
                         <h2>Example Fantasy Ice Hockey Team</h2>
                         <p>Supreme Team!</p>
                         <p>Netminders:</p>
+
                         <article class="row">
                             <article class="col-sm-6">
                                 <figure>
@@ -95,8 +98,10 @@
                                 </figure>
                             </article>
                         </article>
+
                         <hr>
                         <p>Defence:</p>
+
                         <article class="row">
                             <article class="col-sm-4">
                                 <figure>
@@ -120,6 +125,7 @@
                                 </figure>
                             </article>
                         </article>
+
                         <article class="row">
                             <article class="col-sm-4">
                                 <figure>
@@ -145,6 +151,7 @@
                         </article>
                         <hr>
                         <p>Forwards:</p>
+
                         <article class="row">
                             <article class="col-sm-4">
                                 <figure>
@@ -168,6 +175,7 @@
                                 </figure>
                             </article>
                         </article>
+
                         <article class="row">
                             <article class="col-sm-4">
                                 <figure>
@@ -191,6 +199,7 @@
                                 </figure>
                             </article>
                         </article>
+
                         <article class="row">
                             <article class="col-sm-4">
                                 <figure>
@@ -218,11 +227,19 @@
                 </div>
             </div>
         </div>
+        <!--End of sample roster section-->
+
+        <!--Prizes section-->
         <div>
             <h1>Prizes</h1>
             <p>There are cash prizes for the top 3 players, the amount varies depending upon how many people enter. </p>
-            <p>The confirmed amount will be announced once new entries have been closed.</p>
+            <p>The confirmed amount will be announced once new entries have been closed, the minimum prizes are:</p>
+            <ol>
+                <li>1st Place - £50</li>
+                <li>2nd Place - £25</li>
+                <li>3rd Place - £10</li>
+            </ol>
         </div>
+        <!--End of prizes section-->
     </section>
-
 {% endblock %}

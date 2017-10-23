@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="row">
-        <div class="col-12 header-container">
+        <div class="header-container">
             <h1>{{ post.title }}</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
+            <!--If there's an image put it at the top of the blog-->
             {% if post.image %}
-                <img src="/media/{{ post.image }}" width="200px" height="200px">
+                <img src="/media/{{ post.image }}" width="200px" height="200px" class="blog-image">
             {% endif %}
         </div>
     </div>
@@ -16,10 +17,12 @@
         <div class="col-12 blog-container">
             <p>{{ post.content }}</p>
             <p><button class="btn page-button" onclick="location.href='/blog'">Back To Blog</button></p>
+            <!--Only staff can edit a blog post-->
             {% if user.is_staff %}
             <p><button class="btn staff-button" onclick="location.href='edit'">Edit Blog</button></p>
             {% endif %}
             <p><strong>Published: </strong>{{ post.published_date }}| <strong>Views:</strong> {{ post.views }}| <strong>Tag:</strong> {{ post.tag }}</p>
+            <!--Loading disqus for blog comments-->
             {% load disqus_tags %}
             {% set_disqus_title post.title %}
             {% disqus_show_comments %}

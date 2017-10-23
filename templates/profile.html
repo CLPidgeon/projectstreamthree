@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="page-container">
+        <!--User profile information-->
         <h2>Success!</h2>
         <p>You are logged in as {{ user.username }} and you most recently logged in at {{ user.last_login }}. </p>
-        <p>You joined on {{ user.date_joined }} using {{ user.email }}</p>
+        <p>You joined on {{ user.date_joined }} using {{ user.email }} as your email address.</p>
+
         {% if user.is_subscribed %}
+            <!--Only displays subscription information if user has active subscription-->
             <h2>Subscription Details:</h2>
             <p>Your stripe id is {{ user.stripe_id }}</p>
             <p>You have {{ user.subscription_end|timeuntil }} left on your subscription</p>
@@ -15,15 +18,9 @@
                 onclick="return cancelSubscriptionCheck();"
                 class="btn btn-danger">Cancel Subscription</a>
             </p>
-            <script type="text/javascript">
-            function cancelSubscriptionCheck(){
-                if (confirm('Are you sure you want to cancel?')){
-                    return true;
-            }
-            return false;
-            }
-            </script>
+
             {% else %}
+                <!--Displayed if user isn't subscribed-->
                 <h2>Oh no!</h2>
                 <p>You are't subscribed! If you want to become a subscriber or read about our subscriber perks please click
                 <a href="/subscribe">here!</a></p>

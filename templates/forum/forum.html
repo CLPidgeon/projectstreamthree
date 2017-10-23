@@ -6,6 +6,7 @@
             <h2><a href="{% url 'threads' subject.id %}">{{ subject.name }}</a></h2>
             <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
             <table class="forum-table" style="align-content: center">
+                <!--Lists the forum subjects-->
                 <tr>
                     <th>Threads</th>
                     <th>Posts</th>
