@@ -1,3 +1,4 @@
+// Code taken from Code Institute lesson
 $(function() {
 
   $("#subscribe-form").submit(function() {
