@@ -16,6 +16,8 @@ body {
     font-family: "Calibri";
 }
 
+.hide-on-desktop, .hide-on-tablets, .show-on-mobile { display: none; }
+
 .page {
     display: block;
     margin: auto;
@@ -156,6 +158,8 @@ table {
 .fantasy-page{
     background-color: black;
     padding-bottom: 1000px;
+    float: none;
+    margin: 0 auto;
 }
 
 /*End of fantasy EIHL styling*/
@@ -371,3 +375,8 @@ table {
             }
 
         }
+
+    @media (max-width: 479px) {
+        .show-on-desktop, .show-on-tablets{ display: none; }
+        .show-on-mobile {display: block; }
+    }

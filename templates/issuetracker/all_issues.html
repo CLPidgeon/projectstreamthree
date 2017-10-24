@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <section class="page-container col-lg-9 col-md-12 col-sm-12 col-xs-12">
+    <!--This content only shows on screens larger than 479px-->
+    <section class="page-container col-lg-9 col-md-12 col-sm-12 col-xs-12 show-on-desktop show-on-tablets">
         <div class="col-12">
             <h2>Issue Tracker</h2>
             <p>Here you will find our issue tracker - where you can report a bug, request a feature, comment on each item
@@ -9,7 +10,7 @@
         </div>
 
         <!--Accordion panel containing the bug tracker-->
-        <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="accordionBugs">
+        <div class="panel-group col-12" id="accordionBugs">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -90,6 +91,36 @@
             </div>
         </div>
         <!--End of feature tracker-->
+
+        <!--Outlining to how issues are dealt with-->
+        <div class="col-12">
+            <h2>How we deal with issues</h2>
+            <p>As a subscriber you are able to upvote on features, we deal with issues in the issue tracker in the following way.</p>
+            <ol>
+                <li>Bugs</li>
+                <ul>
+                    <li>The top voted bug is dealt with as a priority</li>
+                    <li>We constantly check new bugs being reported</li>
+                </ul>
+                <li>Features</li>
+                <ul>
+                    <li>Half of our time is spent developing the top requested feature</li>
+                </ul>
+            </ol>
+            <p>In the future we will be looking to publish charts with the amount of bugs and features we deal with on a
+            daily basis.</p>
+        </div>
+        <!--End of issue procedure-->
+    </section>
+
+    <!--This content only shows on mobile devices-->
+    <section class="page-container col-md-12 col-sm-12 col-xs-12 show-on-mobile">
+        <div class="col-12">
+            <h2>Issue Tracker</h2>
+            <p>You are viewing this page on a device or screen that is too small to display the issue tracker correctly.
+                You will be unable to report a new issue, request a feature or upvote on an issue.
+                Please view this page on a larger screen. </p>
+        </div>
 
         <!--Outlining to how issues are dealt with-->
         <div class="col-12">
