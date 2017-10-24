@@ -9,18 +9,18 @@
 {% endblock head_js %}
 
 {% block content %}
-    <section class="col-12">
+    <section class="forum-container">
         <a href="/forum/" class="btn page-button">Back to Forum</a>
             <!--New thread form-->
-        <form method="post" action="{% url 'new_thread' subject.id %}">
+        <form method="post" action="{% url 'new_thread' subject.id %}" class="forum-form">
             {% csrf_token %}
-            <article class="form-group">
+            <article>
                 {{ thread_form | as_bootstrap }}
                 <hr>
                 {{ post_form | as_bootstrap }}
             </article>
 
-            <article id="poll_form" class="form-group">
+            <article id="poll_form">
                     {{ poll_form | as_bootstrap }}
                     {{ poll_subject_formset.management_form }}
                     {% for poll_subject_form in poll_subject_formset %}
@@ -28,7 +28,7 @@
                     {% endfor %}
             </article>
 
-            <article class="form-group">
+            <article>
                     <button type="submit" class="btn page-button">Start New Thread</button>
             </article>
         </form>

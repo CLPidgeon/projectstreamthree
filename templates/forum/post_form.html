@@ -10,14 +10,14 @@
 {% endblock %}
 
 {% block content %}
-    <section>
-        <article class="col-12">
+    <section class="forum-container">
+        <article class="col-12 forum-form">
             <a href="/forum/" class="btn page-button">Back to Forum</a>
             <!--New post form-->
             <form method="post" action="{{ form_action }}">
                 {% csrf_token %}
                 {{ form | as_bootstrap }}
-                <article class="form-group">
+                <article>
                     <button type="submit" class="btn page-button">{{ button_text }}</button>
                 </article>
             </form>

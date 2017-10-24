@@ -63,7 +63,7 @@ legend{
     background-color: #283593;
     border: 2px white solid;
     color: white;
-    margin: 3px;
+    margin: 5px;
 }
 
 /*Staff buttons are red to distinguish from the user available buttons*/
@@ -131,7 +131,6 @@ table {
 /*Forum Styling*/
 .forum-container{
     padding-bottom: 80px;
-    text-align: center;
 }
 
 .forum {
@@ -143,7 +142,8 @@ table {
     border-radius: 5px;
     border: 3px #283593 solid;
     color: #B71C1C;
-    margin-bottom: 5px;
+    float: none;
+    margin: 5px auto;
     text-align: center;
 }
 
@@ -161,6 +161,7 @@ table {
     border-radius: 5px;
     border: 3px #283593 solid;
     padding: 10px;
+    text-align: center;
 }
 
 .thread-table{
@@ -215,7 +216,10 @@ table {
 }
 
 .forum-form{
-    color: aliceblue;
+    background-color: aliceblue;
+    text-align: center;
+    border: 2px #B71C1C solid;
+    border-radius: 5px;
 }
 /*End of forum styling*/
 

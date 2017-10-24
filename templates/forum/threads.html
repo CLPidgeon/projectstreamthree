@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% load thread_extras %}
 {% block content %}
-    <section class="forum-header">
+    <section class="forum-container">
+    <div class="forum-header">
         <h1>{{ subject.name }}</h1>
-    </section>
+        <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
+    </div>
     <br />
-    <section class="col-12">
+    <div class="col-12">
         {% if user.is_authenticated %}
             <!--User has to be logged in to create a new thread-->
             <p><a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a></p>
@@ -21,5 +23,6 @@
                 {% include 'forum/thread_item.html' %}
             {% endfor %}
         </table>
+    </div>
     </section>
 {% endblock %}
