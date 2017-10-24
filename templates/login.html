@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-    <!--Log in form-->
-    <form role="form" method="post" action="{% url 'login' %}">
-        <legend>The Ice Hockey Site Log In</legend>
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-    </form>
-    <!--End of log in form-->
+    <section class="page-container">
+        <!--Log in form-->
+        <form role="form" method="post" action="{% url 'login' %}">
+            <legend>The Ice Hockey Site Log In</legend>
+            {% csrf_token %}
+            {{ form | as_bootstrap }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+        <!--End of log in form-->
+    </section>
 {% endblock %}

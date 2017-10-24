@@ -32,8 +32,8 @@ body {
 .banner {
     margin-top:40px;
     padding-top: 30px;
-    background-color: aliceblue;
-    color: black;
+    background-color: black;
+    color: aliceblue;
     text-align: center;
     border-bottom: 2px #B71C1C solid;
     margin-bottom: 5px;
@@ -50,12 +50,12 @@ a:hover{
 }
 
 .form-group{
-    color: aliceblue;
+    color: black;
 }
 
 legend{
     text-align: center;
-    color:white;
+    color: black;
 }
 
 /*User available buttons are blue*/
@@ -113,16 +113,27 @@ legend{
     text-align: left;
 }
 
+.fantasyTeam{
+    text-align: center;
+}
+
 table {
     text-align: left;
 }
 
-.league-tableContainer {
-    padding-bottom: 100px;
+.fantasy-page{
+    background-color: black;
+    padding-bottom: 1000px;
 }
+
 /*End of fantasy EIHL styling*/
 
 /*Forum Styling*/
+.forum-container{
+    padding-bottom: 80px;
+    text-align: center;
+}
+
 .forum {
     border-bottom: 2px #283593 solid;
 }
@@ -131,10 +142,17 @@ table {
     background-color: aliceblue;
     border-radius: 5px;
     border: 3px #283593 solid;
-    margin-bottom: 5px;
     color: #B71C1C;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.forum-table th, td{
+    color: #283593;
+    height:30px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
 }
 
 .forum-header{
@@ -143,13 +161,6 @@ table {
     border-radius: 5px;
     border: 3px #283593 solid;
     padding: 10px;
-}
-
-.forum-table th, td{
-    color: #283593;
-    height:30px;
-    padding: 10px;
-    text-align: center;
 }
 
 .thread-table{
@@ -174,6 +185,7 @@ table {
     width: 100%;
     background-color: #283593;
     color: black;
+    padding-bottom: 80px;
 }
 
 .post-table th{
@@ -201,12 +213,15 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+
+.forum-form{
+    color: aliceblue;
+}
 /*End of forum styling*/
 
 /*Blog styling*/
 .blog-container{
     padding: 15px 15px 75px 15px;
-    color: aliceblue;
 }
 
 .blog-content {
@@ -217,7 +232,6 @@ table {
     color: #B71C1C;
     padding: 5px;
 }
-/*End of Blog styling*/
 
 .header-container{
     color: aliceblue;
@@ -228,6 +242,7 @@ table {
     opacity: 0.9;
     text-align: center;
 }
+/*End of Blog styling*/
 
 /*Issue tracker styling*/
 .tracker-container{

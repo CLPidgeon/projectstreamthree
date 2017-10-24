@@ -13,41 +13,43 @@
 {% endblock %}
 
 {% block content %}
+    <section class="page-container">
+        <div>
+            <h2>Normal Users</h2>
+            <ul>
+                <!--Lists free users access-->
+                <li>One free entry into the Fantasy Ice Hockey League</li>
+                <li>One roster transfer MONTHLY</li>
+                <li>Full access to the forum</li>
+                <li>Report a bug</li>
+                <li>Upvote on bugs you have found that have previously been reported</li>
+                <li>Suggest a new feature</li>
+            </ul>
+            <!--End of free users information-->
 
-    <div class="page-container">
-        <h2>Normal Users</h2>
-        <ul>
-            <!--Lists free users access-->
-            <li>One free entry into the Fantasy Ice Hockey League</li>
-            <li>One roster transfer MONTHLY</li>
-            <li>Full access to the forum</li>
-            <li>Report a bug</li>
-            <li>Upvote on bugs you have found that have previously been reported</li>
-            <li>Suggest a new feature</li>
-        </ul>
-        <!--End of free users information-->
-
-        <!--Outlines subscriber perks-->
-        <h2>Subscriber Perks</h2>
-        <p>Subscriptions are at a set price of £9.99 a month. </p>
-        <ul>
-            <li>Two addiontial entries into the Fantasy Ice Hockey League</li>
-            <li>One roster transfer WEEKLY</li>
-            <li>Upvote on features you would like to see implemented</li>
-        </ul>
+            <!--Outlines subscriber perks-->
+            <h2>Subscriber Perks</h2>
+            <p>Subscriptions are at a set price of £9.99 a month. </p>
+            <ul>
+                <li>Two addiontial entries into the Fantasy Ice Hockey League</li>
+                <li>One roster transfer WEEKLY</li>
+                <li>Upvote on features you would like to see implemented</li>
+            </ul>
         <!--End of subscriber perks-->
-    </div>
-    <div id="credit-card-errors" style="display:none">
-      <div class="alert-message block-message error" id="stripe-error-message"></div>
-    </div>
-    <!--Subscription form-->
-    <form role="form" method="post" id="subscribe-form" action="{% url 'subscribe' %}">
-        <legend>Subscribe</legend>
-        {% csrf_token %}
-        {{ form|as_bootstrap }}
-        <div class="form-group">
-            <input class="btn page-button" id="validate_card_btn" name="commit" type="submit" value="Subscribe">
         </div>
-    </form>
-    <!--End of subscription form-->
+
+        <div id="credit-card-errors" style="display:none">
+          <div class="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
+        <!--Subscription form-->
+        <form role="form" method="post" id="subscribe-form" action="{% url 'subscribe' %}">
+            <legend>Subscribe</legend>
+            {% csrf_token %}
+            {{ form|as_bootstrap }}
+            <div class="form-group">
+                <input class="btn page-button" id="validate_card_btn" name="commit" type="submit" value="Subscribe">
+            </div>
+        </form>
+        <!--End of subscription form-->
+    </section>
 {% endblock %}

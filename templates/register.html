@@ -2,14 +2,16 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-    <!--Registration form-->
-    <form role="form" method="post" action="{% url 'register' %}">
-        <legend>Register for The Ice Hockey Site</legend>
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <article class="form-group">
-            <button type="submit" class="btn page-button">Register</button>
-        </article>
-    </form>
-    <!--End of registration form-->
+    <section class="page-container">
+        <!--Registration form-->
+        <form role="form" method="post" action="{% url 'register' %}">
+            <legend>Register for The Ice Hockey Site</legend>
+            {% csrf_token %}
+            {{ form | as_bootstrap }}
+            <article class="form-group">
+                <button type="submit" class="btn page-button">Register</button>
+            </article>
+        </form>
+        <!--End of registration form-->
+    </section>
 {% endblock %}
