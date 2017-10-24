@@ -1,11 +1,12 @@
-Last updated 17/10/2017
+Last updated 24/10/2017
 
 # The Ice Hockey Site
 
 ## Overview
 
 ### What is this site for?
-The aim of the site is to eventually be the first website UK ice hockey fans visit when online. 
+The aim of the site is to eventually be the first website UK ice hockey fans visit when online. The aim is to get fans
+interacting with the site through the fantasy league, blog and forum. 
 
 ### What does it do?
 The main point of the website is the fantasy ice hockey league, here users compete by creating their own rosters and earning 
@@ -16,8 +17,6 @@ The main point of the website is the fantasy ice hockey league, here users compe
  issue tracker for users to report bugs they discover whilst using the site and to request features they would like adding.
   The idea here is to have everything free to users apart from the upvoting of features, for which they will have to 
   subscribe.
-
-### How does it work?
 
 
 ### Features
@@ -38,9 +37,13 @@ The main point of the website is the fantasy ice hockey league, here users compe
 
 ### Testing
 - The site has been tested using built in Django testing.
-- The site has been tested using Chrome, Firefox, Opera and Edge browsers.
+- The site has been tested using Chrome, Firefox, Opera, Safari and Edge browsers.
 - The site has been tested using multiple iOS and android devices, both tablets and mobile phones. 
 - The site has been tested using http://mobiletest.me/ for other devices.
+- In manual tests all forms have been submitted with correct and incorrect information to ensure the site responds correctly. 
+- All links have been clicked to ensure they go to where the user expects to be taken. During testing various links have been
+found to be broken along with minor form issues, such as an invalid form simply reloading empty without giving the user
+any information. Messages have been added to alert users to the fact incorrect data has been entered on the form.
 
 ### Future Additions
 - The creation of a database to store player information for the fantasy ice hockey.
