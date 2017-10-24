@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-    <form method="post" action="{{ form_action }}">
-        <!--Comment form for the issue-->
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <article class="form-group">
-            <button type="submit" class="btn page-button">{{ button_text }}</button>
-        </article>
-    </form>
-    <!--End of comment form-->
+    <section class="forum-container">
+        <div class="row">
+            <div class="forum-form col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <form method="post" action="{{ form_action }}">
+                    <!--Comment form for the issue-->
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <article class="form-group">
+                        <button type="submit" class="btn page-button">{{ button_text }}</button>
+                    </article>
+                </form>
+                <!--End of comment form-->
+            </div>
+        </div>
+    </section>
 {% endblock %}

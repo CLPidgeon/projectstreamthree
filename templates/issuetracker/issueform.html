@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% load bootstrap_tags %}
-    <h1 style="color: aliceblue">Report An Issue!</h1>
-    <!--New issue form-->
-    <form method="POST" class="form-group">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn page-button">Submit</button>
-    </form>
-    <!--End of new issue form-->
+    <section class="forum-container">
+        <div class="row">
+            <div class="forum-form col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                {% load bootstrap_tags %}
+                <h1">Report An Issue!</h1>
+                <!--New issue form-->
+                <form method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <button type="submit" class="btn page-button">Submit</button>
+                </form>
+                <!--End of new issue form-->
+            </div>
+        </div>
+    </section>
 {% endblock %}

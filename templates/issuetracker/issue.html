@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-    <section class="tracker-container">
-    <h1>Issue: {{ issue.title }}</h1>
-    <p>Problem: {{ issue.description }}</p>
-        {% if user.is_authenticated %}
-            <!--User has to be logged in to add comment-->
-        <p><a href="{% url 'issue_comment' issue.id %}" class="btn page-button">Add Comment</a></p>
-    {% endif %}
+    <section class="page-container col-lg-9 col-md-12 col-sm-12 col-xs-12">
+        <h1>Issue: {{ issue.title }}</h1>
+        <p>Problem: {{ issue.description }}</p>
+            {% if user.is_authenticated %}
+                <!--User has to be logged in to add comment-->
+            <p><a href="{% url 'issue_comment' issue.id %}" class="btn page-button">Add Comment</a></p>
+        {% endif %}
     </section>
     <hr>
-    <section>
-        <!--Loading comments on this issue-->
-        {% for comments in issue.comments.all %}
-            {% include 'issuetracker/comments.html' %}
-        {% endfor %}
-        <!--End of comments-->
+    <section class="page-container col-lg-9 col-md-12 col-sm-12 col-xs-12">
+        <table class="post-table">
+            <tbody>
+                <tr>
+                    <!--All comments are displayed in rows-->
+                    <th>Post</th>
+                    <th>Posted</th>
+                </tr>
+                <!--Loading comments on this issue-->
+                {% for comments in issue.comments.all %}
+                    {% include 'issuetracker/comments.html' %}
+                {% endfor %}
+                <!--End of comments-->
+            </tbody>
+        </table>
     </section>
 {% endblock %}
