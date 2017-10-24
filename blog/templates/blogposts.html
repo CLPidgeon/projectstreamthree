@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
     <!--Only display new blog button if user is staff-->
-    {% if user.is_staff %}
-    <div class="row">
-        <div class="col-12">
-            <button class="btn staff-button" onclick="location.href='{% url 'new_post' %}'">New Blog</button>
-        </div>
-    </div>
-    {% endif %}
-    <!--Displays each post with title, 30 words of post and post details-->
-    {% for post in posts %}
+    <section class="blog-container">
+        {% if user.is_staff %}
         <div class="row">
-            <div class="col-12 header-container">
-                <h1>{{ post.title }}</h1>
+                <button class="btn staff-button" onclick="location.href='{% url 'new_post' %}'">New Blog</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 blog-container">
-                <p>{{ post.content | truncatewords:30 }}</p>
-                <p><button class="btn page-button" onclick="location.href={{ post.id }}">Read More...</button></p>
-                <p>{{ post.published_date }}| <strong>Views:</strong> {{ post.views }}| <strong>Tag:</strong> {{ post.tag }}</p>
+        {% endif %}
+        <!--Displays each post with title, 30 words of post and post details-->
+        {% for post in posts %}
+            <div class="row">
+                <div class="header-content">
+                    <h1>{{ post.title }}</h1>
+                </div>
             </div>
-        </div>
-        <hr>
-    {% endfor %}
+            <div class="row">
+                <div class="blog-content">
+                    <p>{{ post.content | truncatewords:30 }}</p>
+                    <p><button class="btn page-button" onclick="location.href={{ post.id }}">Read More...</button></p>
+                    <p>{{ post.published_date }}| <strong>Views:</strong> {{ post.views }}| <strong>Tag:</strong> {{ post.tag }}</p>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </section>
 {% endblock %}

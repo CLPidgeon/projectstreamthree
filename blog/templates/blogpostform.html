@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% load bootstrap_tags %}
-    <div class="header-container">
-        <h1>New Post</h1>
-    </div>
-    <div>
-        <!--New blog post form-->
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form | as_bootstrap }}
-            <button type="submit" class="btn staff-button">Submit Blog</button>
-        </form>
-        <!--End of new blog post form-->
-    </div>
+    <section class="blog-container">
+        {% load bootstrap_tags %}
+        <div class="header-container">
+            <h1>New Post</h1>
+        </div>
+        <div>
+            <!--New blog post form-->
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <button type="submit" class="btn staff-button">Submit Blog</button>
+            </form>
+            <!--End of new blog post form-->
+        </div>
+    </section>
 {% endblock %}
