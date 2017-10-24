@@ -4,7 +4,7 @@
     <section class="forum-container">
         {% for subject in subjects %}
             <div class="row">
-                <div class="subject col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="subject col-lg-9 col-md-12 col-sm-12 col-xs-12">
                     <h2><a href="{% url 'threads' subject.id %}">{{ subject.name }}</a></h2>
                     <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
                     <p>Threads: {{ subject.threads.count }}</p>

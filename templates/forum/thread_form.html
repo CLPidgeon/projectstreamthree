@@ -10,28 +10,32 @@
 
 {% block content %}
     <section class="forum-container">
-        <a href="/forum/" class="btn page-button">Back to Forum</a>
-            <!--New thread form-->
-        <form method="post" action="{% url 'new_thread' subject.id %}" class="forum-form">
-            {% csrf_token %}
-            <article>
-                {{ thread_form | as_bootstrap }}
-                <hr>
-                {{ post_form | as_bootstrap }}
-            </article>
+        <div class="row">
+            <div class="forum-form col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <a href="/forum/" class="btn page-button">Back to Forum</a>
+                    <!--New thread form-->
+                <form method="post" action="{% url 'new_thread' subject.id %}">
+                    {% csrf_token %}
+                    <article>
+                        {{ thread_form | as_bootstrap }}
+                        <hr>
+                        {{ post_form | as_bootstrap }}
+                    </article>
 
-            <article id="poll_form">
-                    {{ poll_form | as_bootstrap }}
-                    {{ poll_subject_formset.management_form }}
-                    {% for poll_subject_form in poll_subject_formset %}
-                        {{ poll_subject_form | as_bootstrap }}
-                    {% endfor %}
-            </article>
+                    <article id="poll_form">
+                            {{ poll_form | as_bootstrap }}
+                            {{ poll_subject_formset.management_form }}
+                            {% for poll_subject_form in poll_subject_formset %}
+                                {{ poll_subject_form | as_bootstrap }}
+                            {% endfor %}
+                    </article>
 
-            <article>
+                    <article>
                     <button type="submit" class="btn page-button">Start New Thread</button>
-            </article>
-        </form>
-        <!--End of new thread form-->
+                    </article>
+                </form>
+                <!--End of new thread form-->
+            </div>
+        </div>
     </section>
 {% endblock %}

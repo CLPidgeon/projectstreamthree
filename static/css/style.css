@@ -20,13 +20,16 @@ body {
     display: block;
     margin: auto;
     background-color: black;
+    padding-bottom: 80px;
 }
 
 .page-container{
     background-color: aliceblue;
     border: 2px #B71C1C solid;
     border-radius: 5px;
-    padding: 5px 10px 100px 5px;
+    padding: 5px 10px 20px 5px;
+    float: none;
+    margin: 0 auto;
 }
 
 .banner {
@@ -121,6 +124,35 @@ table {
     text-align: left;
 }
 
+.standings-container{
+    background-color: aliceblue;
+    border: 2px #B71C1C solid;
+    border-radius: 5px;
+    padding: 5px 10px 50px 5px;
+}
+
+.standings-table {
+    background-color: #283593;
+    width: 100%;
+    color: black;
+}
+
+.standings-table th{
+    padding:10px;
+    border: 3px black solid;
+    color: #283593;
+    background-color: aliceblue;
+}
+
+.standings-table td{
+    border: 3px black solid;
+    color: black;
+}
+
+.standings-table tr:nth-child(even){
+    background-color: #B71C1C;
+}
+
 .fantasy-page{
     background-color: black;
     padding-bottom: 1000px;
@@ -133,8 +165,8 @@ table {
     padding-bottom: 80px;
 }
 
-.forum {
-    border-bottom: 2px #283593 solid;
+.forum-buttons{
+    text-align: center;
 }
 
 .subject {
@@ -145,6 +177,11 @@ table {
     float: none;
     margin: 5px auto;
     text-align: center;
+}
+
+.threads {
+    float: none;
+    margin: 5px auto;
 }
 
 .forum-table th, td{
@@ -166,7 +203,7 @@ table {
 
 .thread-table{
     background-color: aliceblue;
-    width:100%;
+    width: 100%;
 }
 
 .thread-table th{
@@ -183,10 +220,11 @@ table {
 }
 
 .post-table{
-    width: 100%;
     background-color: #283593;
+    width: 100%;
     color: black;
-    padding-bottom: 80px;
+    float: none;
+    margin: 0 auto 90px auto;
 }
 
 .post-table th{
@@ -205,14 +243,14 @@ table {
     background-color: aliceblue;
 }
 
-.poll-container{
+.poll{
     border: 3px #283593 solid;
     color: aliceblue;
     background-color: #B71C1C;
     border-radius: 5px;
     padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    float: none;
+    margin: 0 auto;
 }
 
 .forum-form{
@@ -220,6 +258,8 @@ table {
     text-align: center;
     border: 2px #B71C1C solid;
     border-radius: 5px;
+    float: none;
+    margin: 5px auto;
 }
 /*End of forum styling*/
 

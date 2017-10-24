@@ -11,17 +11,19 @@
 
 {% block content %}
     <section class="forum-container">
-        <article class="col-12 forum-form">
-            <a href="/forum/" class="btn page-button">Back to Forum</a>
-            <!--New post form-->
-            <form method="post" action="{{ form_action }}">
-                {% csrf_token %}
-                {{ form | as_bootstrap }}
-                <article>
-                    <button type="submit" class="btn page-button">{{ button_text }}</button>
-                </article>
-            </form>
-            <!--End of new post form-->
-        </article>
+        <div class="row">
+            <div class="forum-form col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <a href="/forum/" class="btn page-button">Back to Forum</a>
+                <!--New post form-->
+                <form method="post" action="{{ form_action }}">
+                    {% csrf_token %}
+                    {{ form | as_bootstrap }}
+                    <article>
+                        <button type="submit" class="btn page-button">{{ button_text }}</button>
+                    </article>
+                </form>
+                <!--End of new post form-->
+            </div>
+        </div>
     </section>
 {% endblock %}

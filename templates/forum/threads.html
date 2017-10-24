@@ -2,27 +2,34 @@
 {% load thread_extras %}
 {% block content %}
     <section class="forum-container">
-    <div class="forum-header">
-        <h1>{{ subject.name }}</h1>
-        <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
-    </div>
-    <br />
-    <div class="col-12">
-        {% if user.is_authenticated %}
-            <!--User has to be logged in to create a new thread-->
-            <p><a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a></p>
-        {% endif %}
-            <p><a href="/forum/" class="btn page-button">Back to Forum</a></p>
-        <table class="thread-table">
-            <tr>
-                <!--Lists the threads-->
-                <th>Thread Name</th>
-                <th>Posts</th>
-            </tr>
-            {% for thread in subject.threads.all %}
-                {% include 'forum/thread_item.html' %}
-            {% endfor %}
-        </table>
-    </div>
+        <div class="row">
+            <div class="subject col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <h1>{{ subject.name }}</h1>
+                <p>{% autoescape off %}{{ subject.description }}{% endautoescape %}</p>
+            </div>
+            <br />
+            <div class="forum-buttons">
+                {% if user.is_authenticated %}
+                    <!--User has to be logged in to create a new thread-->
+                    <p><a href="{% url 'new_thread' subject.id %}" class="btn page-button">New Thread</a></p>
+                {% endif %}
+                <p><a href="/forum/" class="btn page-button">Back to Forum</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="threads col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <table class="thread-table">
+                    <tr>
+                        <!--Lists the threads-->
+                        <th>Thread Name</th>
+                        <th>Posts</th>
+                    </tr>
+                    {% for thread in subject.threads.all %}
+                        {% include 'forum/thread_item.html' %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
     </section>
 {% endblock %}
